@@ -1,0 +1,15 @@
+set c 32
+repeat c {
+    spawn sub {
+        scale / 1 2
+        set k 15
+        set x 0
+        repeat / 360 k {
+            increment x
+            go * 2 x
+            turn k
+        }
+        respawn root
+    }
+    turn / 360 c
+}

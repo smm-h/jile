@@ -1,0 +1,2 @@
+streak ' \t\r\n\f' as whitespace
+ignore whitespace

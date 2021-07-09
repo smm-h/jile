@@ -1,0 +1,55 @@
+package jile.math;
+
+public class NonGenericUnionSet implements UnionSet<Object> {
+
+    private final Set<Object>[] sets;
+
+    @SuppressWarnings("unchecked")
+    public NonGenericUnionSet(Set<?>... sets) {
+        int n = 0;
+        for (int i = 0; i < sets.length; i++) {
+            if (sets[i] != null)
+                n++;
+        }
+        this.sets = new Set[n];
+        n = 0;
+        for (int i = 0; i < sets.length; i++) {
+            if (sets[i] != null)
+                this.sets[n++] = (Set<Object>) sets[i];
+        }
+    }
+
+    @Override
+    public boolean contains(Object object) {
+        for (int i = 0; i < sets.length; i++) {
+            if (sets[i].contains(object))
+                return true;
+        }
+        return false;
+    }
+
+    @Override
+    public Object choose() {
+        int index = (int) (Math.random() * sets.length);
+        return sets[index].choose();
+    }
+
+    @Override
+    public Integer getCardinality() {
+        int cardinality = 0;
+        for (int i = 0; i < sets.length; i++) {
+            cardinality += sets[i].getCardinality();
+        }
+        return cardinality;
+    }
+
+    @Override
+    public boolean isFinite() {
+        for (int i = 0; i < sets.length; i++) {
+            if (sets[i].isInfinite())
+                return false;
+        }
+        return true;
+    }
+
+}

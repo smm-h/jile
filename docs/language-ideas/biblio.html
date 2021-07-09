@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>biblio</title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="biblio">biblio</h1>
+<p>no digits or uppercase letters allowed, except for single letters</p>
+<h2 id="no-constructors-only-casting">No constructors, only casting</h2>
+<p>Java's:</p>
+<pre><code class="language-java"><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> </span>{
+    String name;
+    <span class="hljs-keyword">float</span> grade;
+    student(String name, <span class="hljs-keyword">float</span> grade) {
+        <span class="hljs-keyword">this</span>.name = name;
+        <span class="hljs-keyword">this</span>.grade = grade;
+    }
+}
+
+Student student = <span class="hljs-keyword">new</span> Student(<span class="hljs-string">&quot;some dude&quot;</span>, <span class="hljs-number">20.0f</span>)
+</div></code></pre>
+<p>would be:</p>
+<pre><code class="language-lisp"><div>(<span class="hljs-name">define</span> <span class="hljs-string">&quot;student&quot;</span>
+    (<span class="hljs-name">has</span> <span class="hljs-string">&quot;name&quot;</span> string)
+    (<span class="hljs-name">has</span> <span class="hljs-string">&quot;grade&quot;</span> float)
+)
+
+(<span class="hljs-name">cast</span> student
+    (<span class="hljs-name">map</span>
+        (<span class="hljs-name">string</span> <span class="hljs-string">&quot;some dude&quot;</span>)
+        (<span class="hljs-name">float</span> <span class="hljs-number">20.0</span>)
+    )
+)
+</div></code></pre>
+<h2 id="cardinality">Cardinality</h2>
+<p>Cardinality is a form of quiddity: &quot;what is that? that is two apples.&quot;</p>
+<pre><code class="language-lisp"><div>(<span class="hljs-name">cast</span> set)
+
+(<span class="hljs-name">p</span> (<span class="hljs-name">the</span> set))
+</div></code></pre>
+<ul>
+<li>any natural number in written form, e.g. <code>zero</code> or <code>one</code></li>
+<li>articles, e.g. <code>a-(</code>...<code>)</code>, <code>an-(</code>...<code>)</code> and <code>the-(</code>...<code>)</code></li>
+<li><code>many-(</code>...<code>)</code> or <code>any-number-of-(</code>...<code>)</code></li>
+<li>exclusive double-side limit: <code>between-(</code>...<code>)-and-(</code>...<code>)</code></li>
+<li>inclusive double-side limit: <code>between-(</code>...<code>)-and-(</code>...<code>)</code></li>
+<li>exclusive single-side limit
+<ul>
+<li><code>more-than-(</code>...<code>)</code></li>
+<li><code>less-than-(</code>...<code>)</code></li>
+</ul>
+</li>
+<li>inclusive single-side limit
+<ul>
+<li><code>(</code>...<code>)-or-more</code></li>
+<li><code>(</code>...<code>)-or-less</code></li>
+</ul>
+</li>
+<li><code>infinity</code></li>
+<li>sign indicator
+<ul>
+<li><code>negative-(</code>...<code>)</code></li>
+<li><code>positive-(</code>...<code>)</code></li>
+</ul>
+</li>
+</ul>
+<p>data = abstraction + storage</p>
+<p>cardinality = how many of them are there?
+quiddity = what are they?
+storage = how are they stored?</p>
+<ul>
+<li><code>[how many][what][stored how]</code></li>
+</ul>
+
+    </body>
+    </html>

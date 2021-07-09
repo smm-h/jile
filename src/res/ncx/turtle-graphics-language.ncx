@@ -1,0 +1,153 @@
+{
+    metadata {
+        ext: ['tgx']
+        root: curly_braces
+    } 
+
+    streak whitespace {
+        consists-of: ' \t\r\n\f'
+        ignore: true
+    }
+
+    /*
+    streak letters {
+        consists-of: 'ABCDEFGHIJKLMNOPQRSTUVWXUZabcdefghijklmnopqrstuvwxyz'
+    }
+    */
+
+    streak identifier {
+        consists-of: 'ABCDEFGHIJKLMNOPQRSTUVWXUZabcdefghijklmnopqrstuvwxyz_0123456789'
+    }
+
+    streak digits {
+        consists-of: '0123456789'
+    }
+    
+    multitude comment {
+        
+        opaque: true
+        ignore: true
+
+        multitude single_line- {
+            starts-with: '//'
+            ends-with: '\n'
+        }
+
+        multitude multi_line- {
+            starts-with: '/*'
+            ends-with: '*/'
+        }
+    
+    }
+
+    /* multitude double_quotes {
+        opaque: true
+        starts-with: '"'
+        ends-with: '"' 
+    } */
+
+    multitude single_quotes {
+        opaque: true
+        starts-with: "'"
+        ends-with: "'" 
+    }
+
+    multitude curly_braces {
+        starts-with: '{'
+        ends-with: '}'
+    }
+
+    /* multitude parenthesis {
+        starts-with: '('
+        ends-with: ')'
+    }
+
+    multitude square_brackets {
+        starts-with: '['
+        ends-with: ']'
+    } */
+
+    pattern increment {
+        pattern: ['increment' identifier]
+    }
+
+    pattern decrement {
+        pattern: ['decrement' identifier]
+    }
+
+    pattern setting {
+        pattern: ['set' identifier expression]
+    }
+
+    pattern getting {
+        pattern: [identifier]
+    }
+
+    pattern number {
+        pattern: [digits]
+    }
+
+    pattern operators {
+        pattern: ['+' '/' '-' '*']
+    }
+
+    pattern turn {
+
+        // TODO relative patterns, like this:
+        // pattern: ['turn' +]
+
+        pattern -clockwise {
+            pattern: ['turn' number]
+        }
+
+        pattern -counter_clockwise {
+            pattern: ['turn' '-' number]
+        }
+    }
+
+    pattern scale {
+        pattern: ['scale' value]
+    }
+
+    /*
+    pattern spawning {
+        pattern: ['spawn' identifier curly_braces]
+    }
+
+    pattern respawn {
+        pattern: ['respawn' value]
+    }
+    */
+
+    pattern move {
+        pattern: ['move' value]
+    }
+
+    pattern draw {
+        pattern: ['draw' value]
+    }
+
+    pattern repeat {
+        pattern: ['repeat' number curly_braces]
+    }
+
+    pattern calling {
+        pattern: ['call' identifier]
+    }
+
+    pattern defining {
+        pattern: ['define' identifier curly_braces]
+    }
+    
+    pattern expand {
+        pattern: ['expand' value single_quotes]
+    }
+
+    pattern rule_definition {
+        pattern: ['rule' identifier single_quotes curly_braces]
+    }
+    
+    pattern detour {
+        pattern: ['detour' curly_braces]
+    }
+}

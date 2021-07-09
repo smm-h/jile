@@ -1,0 +1,59 @@
+"a+2**x-(p+q)" {
+    "1. KEEP" hide {
+        "NONE FOUND"
+    }
+    "2. BREAK" hide {
+        "a" "+" "2" "*" "*" "x" "-" "(" "p" "+" "q" ")"
+    }
+    "3. FORGE" hide {
+        "a" "+" "2" "**" "x" "-" "(" "p" "+" "q" ")"
+    }
+    "4. ENCLOSE" hide {
+        "a" "+" "2" "**" "x" "-" "(...)" {"p" "+" "q"}
+    }
+    "5. GEN" hide {
+        "NO THANKS"
+    }
+    "6. STRIP" hide {
+        "NONE FOUND"
+    }
+    "7. PARSE" {
+        "0" {"a" "+" "2" "**" "x" "-" "(...)" {"p" "+" "q"} }
+        "[^ **]" {
+            "NONE FOUND"
+        }
+        "[* / + -]" {
+            "+" {
+                "found @ 1" {
+                    "check rule" {
+                        "type @ -1 = expression?" {
+                            "yes" {
+                                "give up"
+                            }
+                        }
+                    }
+                }
+            }
+            "+" {
+                "found @ 1" {
+                    "check rule" {
+                        "type @ -1 = expression?" {
+                            "yes" {
+                                "give up"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        "[+ -]" {
+            
+        }
+        "[> < >= <= ==]" {
+            
+        }
+        "[=]" {
+            
+        }
+    }
+}

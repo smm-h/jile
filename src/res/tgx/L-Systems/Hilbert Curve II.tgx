@@ -1,0 +1,6 @@
+set forward 10
+set angle 90
+rule A '+BF-AFA-FB+' {}
+rule B '-AF+BFB+FA-' {}
+rule F '' {draw forward}
+expand 5 'A'

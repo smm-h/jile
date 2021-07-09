@@ -1,0 +1,4 @@
+set forward 8
+set angle 30
+rule X 'X+X+X+X+X-X-X-X-X' {draw forward}
+expand 1 'X'

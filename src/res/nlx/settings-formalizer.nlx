@@ -1,0 +1,24 @@
+import 'more/Freeform'
+import 'more/C-Style Comments'
+
+// allow nesting
+import 'v/Curly braces'
+
+// property names
+streak '[a-z][A-Z]-_' as identifier
+
+// between property names and values
+verbatim ':'
+
+// vector values
+import 'v/Square brackets'
+
+// scalar values
+import 'more/Strings'
+streak '[0-9].' as numeric
+verbatim 'true'
+verbatim 'false'
+
+// reference values
+verbatim 'none'
+verbatim '@'

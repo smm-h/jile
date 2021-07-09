@@ -1,0 +1,6 @@
+turn 270
+set angle 45
+set forward 8
+rule A 'B[+A]-A' {draw forward}
+rule B 'BB'      {draw forward}
+expand 7 'A'

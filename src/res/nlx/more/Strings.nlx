@@ -1,0 +1,2 @@
+keep '"' ... '"' as double_quotes
+keep "'" ... "'" as single_quotes

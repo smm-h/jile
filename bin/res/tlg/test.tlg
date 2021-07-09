@@ -1,0 +1,24 @@
+"languages" {
+    "formal / artificial" {
+        "programmng" {
+            "compiled" {
+                "C"
+                "C++"
+                "Java"
+            }
+            "interpreted" {
+                "JavaScript"
+                "Python"
+                "GML"
+            }
+        }
+        "mark-up" {
+            "HTML"
+            "XML"
+            "Markdown"
+        }
+    }
+    "informal / natural" {
+        "English"
+    }
+}

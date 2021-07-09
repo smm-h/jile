@@ -1,0 +1,42 @@
+pen off
+go 50
+turn - 0 90
+go 190
+turn 90
+pen on
+
+// Triangle
+repeat 3 {
+    turn / 360 3
+    go 80
+}
+
+// Square
+repeat 4 {
+    turn / 360 4
+    go 80
+}
+
+// Pentagram
+repeat 5 {
+    turn / 360 5
+    go 80
+}
+
+// Hexagram
+repeat 6 {
+    turn / 360 6
+    go 80
+}
+
+// Octagram, and more
+
+repeat 7  {turn / 360 7  go 80}
+repeat 8  {turn / 360 8  go 80}
+repeat 9  {turn / 360 9  go 80}
+repeat 10 {turn / 360 10 go 80}
+repeat 11 {turn / 360 11 go 80}
+repeat 12 {turn / 360 12 go 80}
+repeat 13 {turn / 360 13 go 80}
+repeat 14 {turn / 360 14 go 80}
+repeat 15 {turn / 360 15 go 80}

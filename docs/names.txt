@@ -1,0 +1,19 @@
+Shower / show / Showable
+
++: "show" is the best possible verb
+-: "Shower" sounds weird
+
+Viewer / view / View
+
++: Something extends "View"
+-: "view" is not a cool verb
+
+Vision / vis / Visible
+
++: overall coolness
+-: too braggy for such menial framework
+
+Sight / see / Seeable
+
++: "see" is also a cool verb
+-: "Seeable" is meh

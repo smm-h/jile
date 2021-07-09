@@ -1,0 +1,21 @@
+define heart {
+    define half {
+        repeat 180 {
+            turn angle
+            draw length
+        }
+        repeat 90 {
+            turn angle
+            draw length
+        }
+        repeat 90 {
+            turn * - 0 1 angle
+            draw length
+        }
+    }
+    detour {set angle + 0 1 call half}
+    detour {set angle - 0 1 call half}
+}
+turn 270
+set length 4
+call heart

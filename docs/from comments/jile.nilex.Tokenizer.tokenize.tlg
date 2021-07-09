@@ -1,0 +1,54 @@
+"jile.nilex.Tokenizer.tokenize" {
+    "start the process"
+    "get the contents of the code as a string"
+    "create a new list to put the tokens in"
+    "keep track of where (in which kept, if any) we are in the code"
+    "keep track of which character we are looking at"
+    "keep track of what portion of the code we have added all the tokens of"
+    "loop through all of the characters in the code" {
+        "if we are not inside a kept" {
+            "search for a kept to enter"
+            "get the character at the forward flag"
+            "if we have a kept that starts with that character" {
+                "search all kepts that start with that character" {
+                    "figure out where the opener of that kept would end if it had appeared"
+                    "if that opener can appear and does appear" {
+                        "we found our kept"
+                        "so stop the search"
+                    }
+                }
+            }
+            "if we found a kept that we must enter" {
+                "take whatever is before it, break it into tokens, and add them"
+                "enter that kept"
+                "add the opener to this kept"
+                "move the flag forward"
+                "everything until here is added so also move the backward flag"
+            }
+        }
+        "if we are inside a kept" {
+            "figure out where its closer would end if it had appeared"
+            "if that closer can appear and does appear" {
+                "add the kept"
+                "also add its closer"
+                "move the flag forward"
+                "everything until here is added so also move the backward flag"
+                "exit the kept"
+            }
+        }
+        "move the flag over to the next character"
+    }
+    "when the flag reaches the end, not everything has been added" {
+        "either a non-kept portion remains" {
+            "break it into tokens and add them"
+        }
+        "or an unclosed kept remains" {
+            "unless its closer is entirely whitespace," {
+                "attach a mishap to its opener"
+            }
+            "and add it"
+        }
+    }
+    "finish the process"
+    "and return the tokens"
+}

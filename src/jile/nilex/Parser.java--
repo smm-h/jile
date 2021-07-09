@@ -1,0 +1,79 @@
+package jile.nilex;
+
+import java.util.*;
+
+public class Parser extends SingleProcessor {
+
+    @Override
+    public void _process(Code code) {
+
+        var process = code.new Endeavor("parsing");
+
+        var tree = Organizer.semantics.readCopy(code);
+
+        Iterator<Token> iterator = root.iterator();
+
+        while (iterator.hasNext()) {
+            parse(iterator.next(), process);
+        }
+
+        Token newRoot = new Token(new TokenType.Rule("yo", null)); // TODO rules
+
+        LinkedList<HashMap<String, TokenizerMaker.Rule>> precedencies = null;
+        LinkedList<Token> cell = null;
+
+        int n = cell.size();
+        boolean[] used = new boolean[n];
+        for (int i = 0; i < n; i++) {
+            used[i] = false;
+        }
+
+        Token token, group;
+        TokenizerMaker.Rule rule;
+        String key;
+
+        for (HashMap<String, TokenizerMaker.Rule> precedency : precedencies) {
+            for (int i = 0; i < n; i++) {
+                token = cell.get(i);
+                if (token.type instanceof TokenType.Verbatim) {
+                    key = token.data;
+                    if (precedency.containsKey(key)) {
+                        rule = precedency.get(key);
+                        if (!used[i]) {
+                            used[i] = true;
+                            group = new Token(rule); // new LinkedList<Token>()
+                            for (int j = 0; j < rule.pattern.size(); j++) {
+                                int absoluteIndex = i + rule.getRelativeIndex(j);
+                                if (!used[absoluteIndex]) {
+                                    used[absoluteIndex] = true;
+                                    group.addChild(cell.get(absoluteIndex));
+                                } else {
+                                    group.addChild(null);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return newRoot;
+    }
+}
+
+class Rule extends TokenType {
+    public final LinkedList<Token> pattern;
+
+    public Rule(String title, LinkedList<Token> pattern) {
+        super(title);
+        this.pattern = pattern;
+    }
+
+    public int getRelativeIndex(int j) {
+        return 0;
+    }
+
+    @Override
+    public String getTokenToString(String data) {
+        return "<RULE>";
+    }
+}
