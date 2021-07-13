@@ -1,5 +1,0 @@
-set forward 4
-set angle 60
-rule A 'B-A-B' {draw forward}
-rule B 'A+B+A' {draw forward}
-expand 7 'A'

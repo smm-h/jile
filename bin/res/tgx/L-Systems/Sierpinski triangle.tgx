@@ -1,5 +1,0 @@
-set forward 8
-set angle 120
-rule F 'F-G+F+G-F' {draw forward}
-rule G 'GG'        {draw forward}
-expand 7 'F-G-G'

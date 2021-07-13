@@ -1,7 +1,0 @@
-streak '\r\n' as newline
-streak '[a-z][A-Z]_' as word
-streak '[0-9].+-' as number
-streak ' \t\f' as inlinewhitespace
-streak '~!@#$%^&*()=+/|\,<>[]:;' as breakible
-// verbatim '\t' // TODO
-keep '`' ... '`' as mono

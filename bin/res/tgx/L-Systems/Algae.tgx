@@ -1,4 +1,0 @@
-set forward 10
-rule A 'AB' {draw forward turn + 0 30}
-rule B 'A'  {draw forward turn - 0 30}
-expand 10 'A'

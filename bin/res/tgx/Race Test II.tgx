@@ -1,6 +1,0 @@
-repeat 10 {
-    turn 36
-    detour {
-        draw 100
-    }
-}

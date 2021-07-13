@@ -1,5 +1,0 @@
-make Organizer and Tokenizer both implement the newly defined interface 'Defineable'
-
-live preview
-
-turn the modes of view into subclasses

@@ -1,6 +1,0 @@
-
-keep '//' ... '\n' as single_line_comment
-ignore single_line_comment
-
-keep '/*' ... '*/' as multi_line_comment
-ignore multi_line_comment

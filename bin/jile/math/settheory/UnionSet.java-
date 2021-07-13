@@ -1,7 +1,0 @@
-package jile.math;
-
-public interface UnionSet<T> extends Set<T> {
-    default public Set<T> flatten() {
-        throw new UnsupportedOperationException("UnionSet flattening undefined");
-    }
-}

@@ -1,5 +1,0 @@
-set forward 6
-set angle 25
-rule X 'F+[[X]-X]-F[-FX]+X' {}
-rule F 'FF' {draw forward}
-expand 5 'X'
