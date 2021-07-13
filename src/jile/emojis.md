@@ -2,7 +2,7 @@
 
 | Emoji                  | Pattern                                                              | Meaning                                           |
 | ---------------------- | -------------------------------------------------------------------- | ------------------------------------------------- |
-| :package:              | `\[:package:(.*)\]\((.*)readme\.md\)`                                | A `readme.md` file that represents a Java package |
+| :package:              | `\[[^:](.*)\]\((.*)readme\.md\)`                                     | A `readme.md` file that represents a Java package |
 | :back:                 | `\[:back:\]\((.*)readme\.md\)`                                       | The `readme.md` file one directory higher         |
 | :link:                 | `\[(.*):link:\]\((.*)\.md\)`                                         | A leaf `*.md` file                                |
 | :globe_with_meridians: | `\[:globe_with_meridians:\]\(https://en\.wikipedia\.org/wiki/(.*)\)` | A Wikipedia article representing that type        |
@@ -20,7 +20,7 @@
   - :gear: Formalized settings
   - :turtle: Turtle graphics
   - :seedling: L-System
-- Type adjectives
+- Type modifiers
   - :spider_web: Well-documented
   - :zap: Optimized
   - :bricks: Primitive

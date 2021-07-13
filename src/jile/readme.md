@@ -15,16 +15,16 @@ The two main projects in Jile are **NiLEX**, which has a long history before my 
 
 ## Packages
 
-- [:package: common](common/readme.md) utility methods, static functionality, basic data strucutres, and general interfaces that all other packages must "play nice" with
-- [:package: nilex](nilex/readme.md) the study of **Nilic languages**
-- [:package: vis](vis/readme.md) **visualization** of data structures and UI elements, and the necessary tools for "theming" them
-- [:package: math](math/readme.md) formalizing theories in **theoretical mathematics**
-- [:package: cs](cs/readme.md) material from courses taught in academic **computer science**
+- [`common`](common/readme.md) utility methods, static functionality, basic data strucutres, and general interfaces that all other packages must "play nice" with
+- [`nilex`](nilex/readme.md) the study of **Nilic languages**
+- [`vis`](vis/readme.md) **visualization** of data structures and UI elements, and the necessary tools for "theming" them
+- [`math`](math/readme.md) formalizing theories in **theoretical mathematics**
+- [`cs`](cs/readme.md) material from courses taught in academic **computer science**
 
 And coming soon,
 
-- [:package: gm](TODO), pygame-like wrapper over SDL, mimicing **GML semantics** to which I was once addicted
-- [:package: therm](TODO) deals with energy, mass and discrete time in the context of **thermodynamics**
+- [`gm`](TODO), pygame-like wrapper over SDL, mimicing **GML semantics** to which I was once addicted
+- [`therm`](TODO) deals with energy, mass and discrete time in the context of **thermodynamics**
 
 ## Emojis
 
