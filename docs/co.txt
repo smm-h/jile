@@ -1,0 +1,21 @@
+
+
+
+*.nlx --=(tokenize)==> List<Token> --==> [Tokenizer]Definition* --=[define]==> Tokenizer
+    [TokenizerLanguage] tokenize
+    ?
+    [TokenizerLanguage] synthesize
+
+*.simpletree --=(tokenize)==> List<Token> --=[add|goTo|goBack]==> LinkedTree
+    TokenizerLanguage.getProcessor
+    [TreeLanguage] synthesize
+
+*.ncx --=(tokenize)==> List<Token> --==> [Organizer]Definition* --=[define]==> Organizer
+
+
+*.tgx --=(tokenize)==> List<Token> --=(organize)==> Tree<Token> --=[turn|go|goTo]==> TurtleGraphics
+
+% --=[replace]==> String
+
+*.txt|text --=(split)==> List<String>
+

@@ -1,0 +1,15 @@
+Visualizable X Codeable
+
+File/String
+ - - - - load/save
+Code - - - -
+ - - - - encode/decode
+Model "Visualizable/Codeable" (Tree/Code/...)
+ - - - - visualize/modelize
+View - - - -
+
+Code		Visualizable
+CodeView	View
+Tree<T>		Visualizable, 
+TreeView<T>	View, Encodeable
+Language	Encodeable, Decoder

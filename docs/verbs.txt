@@ -1,0 +1,4 @@
+encoded		code
+decoded		decoded:sourceCode
+encoder		encodable:encode()
+decoder		language:decode()

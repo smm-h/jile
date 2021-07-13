@@ -1,0 +1,5 @@
+set forward 6
+set angle 90
+rule F 'F+G' {draw forward}
+rule G 'F-G' {draw forward}
+expand 10 'F'

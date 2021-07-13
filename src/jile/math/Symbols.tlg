@@ -1,0 +1,14 @@
+"Symbol" {
+    "Variable"
+    "Constant" {
+        "Logical" {
+            "Logical connective"
+            "Qualifier"
+            "Statement"
+        }
+        "Non-logical" {
+            "Predicate"
+            "Individual constant"
+        }
+    }
+}

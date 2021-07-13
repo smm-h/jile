@@ -1,0 +1,88 @@
+/*
+    A domain is a set of definitions such as Streaks, Enclosures, and Rules.
+    All names are unique per domain.
+    Use importing to turn external names into internal ones.
+    A pattern is a unseparated list of names and verbatims.
+*/
+
+{
+    pattern upon_success_or_failure {
+        pattern: ['upon']
+        | {
+            final: true
+            direction: right 
+            success_state {
+                pattern: ['success']
+            }
+            failure_state {
+                pattern: ['failure']
+            }
+        }
+    }
+
+    pattern upon {
+        pattern: [upon_success_or_failure success_state ':' expression]
+        // self similarity
+        multitude _s {
+            affixation: suffix
+            separator: ','
+        }
+    }
+
+    pattern expression {
+        pattern: [subject ':' predicates '.']
+    }
+
+    pattern predicate {
+        pattern: [letters ':=' verb object arguments]
+        pattern cancellable_ {
+            final: false
+            pattern: ['only_if']
+            pattern __upon_success {
+                pattern: ['succeeds']
+            }
+            pattern __upon_failure {
+                pattern: ['fails']
+            }
+        }
+        multitude _s {
+            separator: ';'
+        }
+    }
+
+    multitude curly_braces {
+        from: '{'
+        to: '}'
+    }
+
+    pattern statement {
+        precedence: true
+        pattern if_ {
+            pattern: ['if' condition statements]
+            pattern _else {
+                pattern: ['else' statements]
+            }
+        }
+        pattern call {
+            pattern: [expression upons '.']
+        }
+        multitude _s {
+            root: true
+            in: curly_braces
+            separator: ';'
+        }
+    }
+
+    multitude comment {
+        opaque: true
+        pattern single_line_ {
+            from: '//'
+            to: '\n'
+            to_inclusion: false
+        }
+        pattern multi_line_ {
+            from: '/*'
+            to: '*/'
+        }
+    }
+}

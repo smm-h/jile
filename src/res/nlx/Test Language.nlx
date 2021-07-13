@@ -1,0 +1,37 @@
+ext 'testlang'
+
+streak identifier
+streak digits
+streak whitespace
+ignore whitespace
+
+verbatim '+'
+verbatim '-'
+verbatim '*'
+verbatim '/'
+
+# to demonstrate streak conflict resolution using sets
+
+streak letters
+
+# to demonstrate conflicting verbatims
+
+verbatim '='
+verbatim '=='
+verbatim '+='
+verbatim '==='
+
+keep '"' ... '"' as node
+
+# comments
+keep '//' ... '\n' as single_line_comment
+keep '/*' ... '*/' as multi_line_comment
+ignore single_line_comment
+ignore multi_line_comment
+
+# to test enclosures
+
+enclose '[' ... ']' as square_brackets
+
+// separator ',' in square_brackets as list_literal
+// separator ':' in square_brackets count 1 as slicer

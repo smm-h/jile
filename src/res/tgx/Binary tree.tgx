@@ -1,0 +1,19 @@
+pen off
+turn - 0 90
+go - 0 180
+pen on
+
+spawn main {
+    scale / 4 5
+    set k 22
+    turn k
+    spawn left_branch {
+        go 100
+        respawn main
+    }
+    turn - 0 * 2 k
+    spawn right_branch {
+        go 100
+        respawn main
+    }
+}

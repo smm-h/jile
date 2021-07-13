@@ -1,0 +1,15 @@
+"Everything" {
+    "Group(T) (Set(T), operate: (T, T) -> T) (identity, inverse: (T) -> T)" {
+        "AbelianGroup" {
+            "Ring(T) (Set(T))"
+        }
+    }
+    "Set(A)"
+
+    "Operation (symbol, arity, Z)" {
+        "Operation () (operate: () -> Z)"
+        "Operation (A) (operate: (A) -> Z)"
+        "Operation (A, B) (operate: (A, B) -> Z)"
+        "Operation (A, B, C) (operate: (A, B, C) -> Z)"
+    }
+}

@@ -1,0 +1,17 @@
+//define line {
+    //draw 100
+    /*scale / 1 2
+    detour {
+        call ball
+    }*/
+//}
+// define ball {
+    repeat 10 {
+        turn 36
+        detour {
+            //call line
+            draw 100
+        }
+    }
+// }
+// call ball

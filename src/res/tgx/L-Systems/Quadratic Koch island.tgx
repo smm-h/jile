@@ -1,0 +1,4 @@
+set forward 8
+set angle 90
+rule F 'F+F-F-FF+F+F-F' {draw forward}
+expand 2 'F+F+F+F'

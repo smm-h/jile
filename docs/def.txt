@@ -1,0 +1,23 @@
+basic def priority
+	untouchable
+	streak
+	verbatim
+	gen encl
+	spec encl
+	rules
+
+basic def
+	rule
+	verbatim
+	streak
+	dark encl (opaque)
+	[light] encl
+	specific encl
+
+token type
+	rule
+	non-streak-char
+	verbatim
+	streak
+	abstract encl
+	untouchable

@@ -1,0 +1,15 @@
+pen off
+    go 50   turn 270
+    go 190  turn 90
+pen on
+
+set x 3
+
+repeat 12 {
+    repeat x {
+        turn / 360 x
+        go 86
+    }
+    // set x + 1 x
+    increment x
+}
