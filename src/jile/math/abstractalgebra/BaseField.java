@@ -32,6 +32,7 @@ abstract public class BaseField<T> implements Field<T> {
         this.multiplicativeIdentity = multiplicativeIdentity;
         this.multiplicativeInvertion = multiplicativeInvertion;
         this.multiplication = multiplication;
+        // TODO fieldable
     }
 
     @Override

@@ -4,36 +4,24 @@ import jile.math.numbers.Real;
 
 public interface Triangle extends Polygon {
 
-    default public LineSegment getEdgeAB() {
-        return new LineSegment(a, b);
-    }
-
-    default public LineSegment getEdgeBC() {
-        return new LineSegment(b, c);
-    }
-
-    default public LineSegment getEdgeCA() {
-        return new LineSegment(c, a);
-    }
-
     /**
      * @see https://en.wikipedia.org/wiki/Heron%27s_formula
      */
     default public Real getArea() {
-        Real s = Real.divide(getPerimeter(), Real.TWO);
+        Real s = getPerimeter().divide(2);
         Real a = s;
-        a = Real.multiply(a, Real.subtract(s, getEdgeAB().getLength()));
-        a = Real.multiply(a, Real.subtract(s, getEdgeBC().getLength()));
-        a = Real.multiply(a, Real.subtract(s, getEdgeCA().getLength()));
-        return Real.sqrt(a);
+        for (LineSegment line : getLines()) {
+            a = a.multiply(s.subtract(line.getLength()));
+        }
+        return a.sqrt();
     }
 
     @Override
     default public Real getPerimeter() {
         Real perimeter = Real.ZERO;
-        perimeter = Real.add(perimeter, getEdgeAB().getLength());
-        perimeter = Real.add(perimeter, getEdgeBC().getLength());
-        perimeter = Real.add(perimeter, getEdgeCA().getLength());
+        for (LineSegment line : getLines()) {
+            perimeter = perimeter.add(line.getLength());
+        }
         return perimeter;
     }
 }

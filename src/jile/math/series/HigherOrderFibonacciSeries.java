@@ -1,5 +1,7 @@
 package jile.math.series;
 
-public interface HigherOrderFibonacciSeries extends Series {
+import jile.math.numbers.Integer;
+
+public interface HigherOrderFibonacciSeries extends Series<Integer> {
     public int getOrder();
 }

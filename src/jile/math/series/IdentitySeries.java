@@ -1,6 +1,7 @@
 package jile.math.series;
 
 import jile.common.Singleton;
+import jile.math.numbers.Integer;
 
 /**
  * The {@link IdentitySeries} is a {@link Series} that maps each ordinal to
@@ -9,7 +10,7 @@ import jile.common.Singleton;
  * 
  * @see OffsetSeries
  */
-public class IdentitySeries implements Series, Singleton {
+public class IdentitySeries implements Series<Integer>, Singleton {
 
     private IdentitySeries() {
     }
@@ -29,13 +30,13 @@ public class IdentitySeries implements Series, Singleton {
     }
 
     @Override
-    public boolean contains(Double k) {
-        return k != null && Math.floor(k) == k;
+    public boolean contains(Integer k) {
+        return k != null;
     }
 
     @Override
-    public Double getElementAt(int k) {
-        return (double) k;
+    public Integer getElementAt(int k) {
+        return Integer.fromContents(k);
     }
 
 }

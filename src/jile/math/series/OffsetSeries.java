@@ -1,14 +1,16 @@
 package jile.math.series;
 
+import jile.math.numbers.Integer;
+
 /**
  * An {@link OffsetSeries} is a {@link Series} that maps each ordinal to itself
  * added by a constant integer called the "offset".
  * 
  * @see IdentitySeries
  */
-public class OffsetSeries implements Series {
+public class OffsetSeries implements Series<Integer> {
 
-    private final int offset;
+    private final Integer offset;
 
     /**
      * @param offset cannot be zero; use {@link IdentitySeries} instead.
@@ -16,7 +18,7 @@ public class OffsetSeries implements Series {
     public OffsetSeries(int offset) {
         if (offset == 0)
             throw new IllegalArgumentException("offset cannot be zero");
-        this.offset = offset;
+        this.offset = Integer.fromContents(offset);
     }
 
     @Override
@@ -25,20 +27,18 @@ public class OffsetSeries implements Series {
     }
 
     @Override
-    public boolean contains(Double k) {
+    public boolean contains(Integer k) {
         if (k != null) {
-            if (Math.floor(k) == k) {
-                if (k >= offset) {
-                    return true;
-                }
+            if (k.compareTo(offset) >= 0) {
+                return true;
             }
         }
         return false;
     }
 
     @Override
-    public Double getElementAt(int k) {
-        return (double) (k + offset);
+    public Integer getElementAt(int k) {
+        return offset.add(k);
     }
 
 }

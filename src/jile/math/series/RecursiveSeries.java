@@ -1,5 +1,7 @@
 package jile.math.series;
 
+import jile.math.annotations.BadDesign;
+
 /**
  * A {@link RecursiveSeries} is a {@link Series}, the calculation of whose
  * elements involve a recursion of typically O(n) where n is the index of the
@@ -11,6 +13,6 @@ package jile.math.series;
  * 
  * @see IterativeSeries
  */
-public interface RecursiveSeries extends Series {
-
+@BadDesign
+public interface RecursiveSeries {
 }

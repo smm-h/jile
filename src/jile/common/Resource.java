@@ -1,21 +1,9 @@
 package jile.common;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.TreeMap;
-import java.util.jar.JarFile;
-
-import jile.common.*;
-
-import java.util.jar.JarEntry;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
+import java.util.*;
+import java.util.jar.*;
+import java.nio.file.*;
+import java.io.*;
 import java.net.URLDecoder;
 
 public abstract class Resource implements Identifiable {

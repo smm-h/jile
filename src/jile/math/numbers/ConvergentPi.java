@@ -15,7 +15,7 @@ public class ConvergentPi extends BaseIrrationalConvergent implements Pi {
 
     @Override
     public double converge(int depth) {
-        return 1 / new ChudnovskySeries().getElementAt(depth);
+        return Real.ONE.divide(new ChudnovskySeries().getElementAt(depth)).approximate();
         // return new GregoryLeibnizSeries().getElementAt(depth);
     }
 

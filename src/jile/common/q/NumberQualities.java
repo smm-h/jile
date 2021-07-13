@@ -63,7 +63,7 @@ public interface NumberQualities {
 
     public static interface Multiple {
         public static Divisible of(int d) {
-            return new Divisible(d);
+            return Divisible.by(d);
         }
     }
 

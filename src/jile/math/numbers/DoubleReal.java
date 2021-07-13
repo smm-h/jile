@@ -29,7 +29,7 @@ public class DoubleReal extends BaseNumber {
             Real wrapper;
             wrapper = cache.get(contents);
             if (wrapper == null) {
-                wrapper = new DoubleReal(contents);
+                wrapper = Common.is_int(contents) ? new IntegerInteger(contents.intValue()) : new DoubleReal(contents);
                 try {
                     cache.add(contents, wrapper);
                 } catch (CacheCollisionException e) {

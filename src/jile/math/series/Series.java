@@ -5,44 +5,56 @@ import java.util.ArrayList;
 
 import jile.math.annotations.BadDesign;
 import jile.math.annotations.Inefficient;
+import jile.math.annotations.Suboptimal;
+import jile.math.numbers.Integer;
+import jile.math.numbers.Real;
 import jile.math.sequence.InfiniteSequence;
 import jile.math.sequence.SpecificSequence;
 import jile.common.Random;
 
 /**
- * A {@link Series} is an {@link InfiniteSequence} of {@link Double} values.
+ * A {@link Series} is an {@link InfiniteSequence} of {@link T} values.
+ * 
+ * @see ParasiteSeries
+ * @see OffsetSeries
+ * @see SumSeries
+ * @see ProductSeries
+ * @see ArithmeticSeries
+ * @see GeometricSeries
+ * 
  */
-public interface Series extends InfiniteSequence, SpecificSequence<Double> {
+public interface Series<T extends Real> extends InfiniteSequence, SpecificSequence<T> {
 
     @Override
-    default public List<Double> excerpt() {
+    default public List<T> excerpt() {
         int n = fairLimit();
-        List<Double> list = new ArrayList<Double>(n);
+        List<T> list = new ArrayList<T>(n);
         for (int i = 0; i < n; i++)
             list.add(i, getElementAt(i));
         return list;
     }
 
     @BadDesign
-    default public List<Long> excerptWhole() {
+    default public List<Integer> excerptWhole() {
         int n = fairLimit();
-        List<Long> list = new ArrayList<Long>(n);
+        List<Integer> list = new ArrayList<Integer>(n);
         for (int i = 0; i < n; i++) {
-            double e = getElementAt(i);
-            list.add(i, (long) e);
+            T e = getElementAt(i);
+            list.add(i, e.toInteger());
         }
         return list;
     }
 
     @Inefficient
+    @Suboptimal
     @Override
-    default public boolean contains(Double n) {
+    default public boolean contains(T n) {
         int k = 0;
-        double e;
+        T e;
         while (true) {
             e = getElementAt(k++);
-            if (e >= n)
-                return e == n;
+            if (e.compareTo(n) >= 0)
+                return e.equals(n);
             if (k > fairLimit())
                 break;
         }

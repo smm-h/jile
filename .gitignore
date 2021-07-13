@@ -1,0 +1,11 @@
+/bin
+/.trash
+/.vscode
+/docs/*.html
+/docs/*.png
+/docs/*.pdf
+/docs/*.odg
+/**/desktop.ini
+/jar/jile.nilex.jar
+/*.code-workspace
+/*.rar

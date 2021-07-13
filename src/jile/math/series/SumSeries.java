@@ -1,5 +1,7 @@
 package jile.math.series;
 
+import jile.math.numbers.Real;
+
 /**
  * A {@link SumSeries} is a {@link ParasiteSeries} whose each element is
  * calculated as the sum of all the elements of the host {@link Series} before
@@ -7,8 +9,8 @@ package jile.math.series;
  * 
  * @see ProductSeries
  */
-public interface SumSeries extends ParasiteSeries {
-    public static final double identity = 0.0;
+public interface SumSeries<H extends Real> extends ParasiteSeries<Real, H> {
+    public static final Real identity = Real.ZERO;
 
     @Override
     default int fairLimit() {

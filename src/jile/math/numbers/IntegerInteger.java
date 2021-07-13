@@ -50,4 +50,30 @@ public class IntegerInteger extends BaseNumber implements Integer {
     public String express() {
         return toString();
     }
+
+    @Override
+    public Integer add(int other) {
+        return Integer.fromContents(other + value);
+    }
+
+    @Override
+    public Integer multiply(int other) {
+        return Integer.fromContents(other * value);
+    }
+
+    @Override
+    public Integer add(Integer other) {
+        if (other instanceof IntegerInteger)
+            return Integer.fromContents(((IntegerInteger) other).value + value);
+        else
+            return Integer.super.add(other);
+    }
+
+    @Override
+    public Integer multiply(Integer other) {
+        if (other instanceof IntegerInteger)
+            return Integer.fromContents(((IntegerInteger) other).value * value);
+        else
+            return Integer.super.multiply(other);
+    }
 }

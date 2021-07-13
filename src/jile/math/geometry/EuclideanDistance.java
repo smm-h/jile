@@ -30,7 +30,7 @@ public class EuclideanDistance implements Metric<Point> {
             throw new DimensionMismatchException();
         Real L = Real.ZERO;
         for (int i = 0; i < d; i++)
-            L = Real.add(L, Real.sqr(Real.subtract(a.getElementAt(i), b.getElementAt(i))));
-        return Real.sqrt(L);
+            L = L.add((a.getElementAt(i).subtract(b.getElementAt(i)).sqr()));
+        return L.sqrt();
     }
 }

@@ -1,5 +1,7 @@
 package jile.math.series;
 
+import jile.math.numbers.Integer;
+
 public interface RecursiveHigherOrderFibonacciSeries extends HigherOrderFibonacciSeries {
 
     @Override
@@ -8,14 +10,14 @@ public interface RecursiveHigherOrderFibonacciSeries extends HigherOrderFibonacc
     }
 
     @Override
-    default public Double getElementAt(int index) {
+    default public Integer getElementAt(int index) {
         int n = getOrder();
         if (index < n) {
-            return index == (n - 1) ? 1.0 : 0.0;
+            return index == (n - 1) ? Integer.ONE : Integer.ZERO;
         } else {
-            double s = 0.0;
+            Integer s = Integer.ZERO;
             for (int i = 1; i <= n; i++)
-                s += getElementAt(index - i);
+                s = s.add(getElementAt(index - i));
             return s;
         }
     }

@@ -367,6 +367,18 @@ public interface Common {
         return x;
     }
 
+    public static double power(double b, double p) {
+        return Math.pow(b, p);
+    }
+
+    public static double log(double n, double b) {
+        return Math.log(n) / Math.log(b);
+    }
+
+    public static boolean isPowerOf(double n, double b) {
+        return is_int(log(n, b));
+    }
+
     public static float distance(int x1, int y1, int x2, int y2) {
         return sqrt(sqr(x1 - x2) + sqr(y1 - y2));
     }
