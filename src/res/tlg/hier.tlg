@@ -1,20 +1,20 @@
 "a+2**x-(p+q)" {
-    "1. KEEP" hide {
+    "1. KEEP" {
         "NONE FOUND"
     }
-    "2. BREAK" hide {
+    "2. BREAK" {
         "a" "+" "2" "*" "*" "x" "-" "(" "p" "+" "q" ")"
     }
-    "3. FORGE" hide {
+    "3. FORGE" {
         "a" "+" "2" "**" "x" "-" "(" "p" "+" "q" ")"
     }
-    "4. ENCLOSE" hide {
+    "4. ENCLOSE" {
         "a" "+" "2" "**" "x" "-" "(...)" {"p" "+" "q"}
     }
-    "5. GEN" hide {
+    "5. GEN" {
         "NO THANKS"
     }
-    "6. STRIP" hide {
+    "6. STRIP" {
         "NONE FOUND"
     }
     "7. PARSE" {
