@@ -10,7 +10,7 @@ A mishap is an error that happened during a [process](processing.md#process), an
 
 ## All mishap subclasses
 
-- `LinterMishap` (defined in [Linter](../lang/Linter.java))
+- `LinterMishap` (defined in [Linter](Linter.java))
   - `UnexpectedToken`
 - `GrouperMishap` (defined in [Grouper](Grouper.java))
   - `Unbalanced`
