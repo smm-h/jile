@@ -1,10 +1,10 @@
 package jile.math.numbers;
 
 import jile.math.settheory.NamedSet;
-import jile.math.settheory.NonNullibleInfiniteUniversalSet;
+import jile.math.settheory.InfiniteUniversalSet;
 import jile.common.Random;
 
-public class RealSet implements NamedSet, NonNullibleInfiniteUniversalSet<Double> {
+public class RealSet implements NamedSet, InfiniteUniversalSet<Double> {
 
     private RealSet() {
     }

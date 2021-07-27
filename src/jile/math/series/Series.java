@@ -61,14 +61,6 @@ public interface Series<T extends Real> extends InfiniteSequence, SpecificSequen
         return false;
     }
 
-    /**
-     * Series are not nullibe.
-     */
-    @Override
-    default public boolean containsNull() {
-        return false;
-    }
-
     @Override
     default public int chooseElement() {
         return Random.singleton().nextInt(fairLimit());

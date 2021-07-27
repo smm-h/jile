@@ -28,11 +28,6 @@ public interface EuclideanSpace extends Dimensional, InfiniteUniversalSet<Point>
         return Point.fromContents(array);
     }
 
-    @Override
-    default public boolean containsNull() {
-        return false;
-    }
-
     public Iterable<GeometricalObject> getObjects();
 
     @Override

@@ -58,16 +58,4 @@ public interface Relation extends SpecificSet<FiniteTuple> {
         return !isHomogeneous();
     }
 
-    /**
-     * Returns false because relations cannot be nullible: they can be empty or
-     * contain a zero-length tuple (if they are nullary), but they may not contain
-     * null.
-     * <p>
-     * {@inheritDoc}
-     */
-    @Override
-    default public boolean containsNull() {
-        return false;
-    }
-
 }

@@ -52,7 +52,7 @@ public interface FreeMonoid<T> extends Monoid<FiniteSpecificSequence<T>> {
     @Override
     @Inefficient
     default public SpecificSet<FiniteSpecificSequence<T>> getSet() {
-        return new NullibleInfiniteUniversalSet<FiniteSpecificSequence<T>>() {
+        return new InfiniteUniversalSet<FiniteSpecificSequence<T>>() {
             @Override
             @SuppressWarnings("unchecked")
             public FiniteSpecificSequence<T> choose() {

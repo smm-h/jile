@@ -3,7 +3,6 @@ package jile.math.settheory;
 import java.util.List;
 
 import jile.math.numbers.Complex;
-import jile.common.*;
 
 /**
  * As the building-block of set theory, a {@link Set} is an unordered collection
@@ -54,12 +53,6 @@ public interface Set {
     public boolean containsUnchecked(Object object);
 
     /**
-     * Returns whether or not this set is nullible, meaning it contains the special
-     * and implementation-specific unique object, "null".
-     */
-    public boolean containsNull();
-
-    /**
      * Chooses and returns a random element from this set. Useful when testing
      * various properties of the set in different contexts.
      * <p>
@@ -106,49 +99,29 @@ public interface Set {
         return !isFinite();
     }
 
-    /**
-     * Returns whether or not this set is finite, informally meaning "one could
-     * start counting its elements and finish counting".
-     * 
-     * @apiNote Rather than checking {@code instanceof} {@link NullibleSet}, always
-     *          use this method.
-     */
-    default public boolean isNullible() {
-        return containsNull();
-    }
+    // /**
+    // * Returns whether or not a set is countable.
+    // * <p>
+    // * <i>Currently all sets are assumed to be countable. This may change in the
+    // * future.</i>
+    // * <p>
+    // * A set is countable that has less or equal cardinality as the set of natural
+    // * numbers. A countable set is either finite or countably infinite set. Either
+    // * way, the elements of a countable set can always be counted one at a time
+    // and
+    // * although the counting may never finish, every element of the set is
+    // * associated with a unique natural number.
+    // */
+    // default public boolean isCountable() {
+    // return true;
+    // }
 
-    /**
-     * Returns the opposite of {@link #isNullible}, unless overridden.
-     * 
-     * @apiNote Rather than checking {@code instanceof} {@link NonNullibleSet},
-     *          always use this method.
-     */
-    default public boolean isNonNullible() {
-        return !isNullible();
-    }
-
-    /**
-     * Returns whether or not a set is countable.
-     * <p>
-     * <i>Currently all sets are assumed to be countable. This may change in the
-     * future.</i>
-     * <p>
-     * A set is countable that has less or equal cardinality as the set of natural
-     * numbers. A countable set is either finite or countably infinite set. Either
-     * way, the elements of a countable set can always be counted one at a time and
-     * although the counting may never finish, every element of the set is
-     * associated with a unique natural number.
-     */
-    default public boolean isCountable() {
-        return true;
-    }
-
-    /**
-     * Returns the opposite of {@link #isCountable}, unless overridden.
-     */
-    default public boolean isNoncountable() {
-        return !isCountable();
-    }
+    // /**
+    // * Returns the opposite of {@link #isCountable}, unless overridden.
+    // */
+    // default public boolean isNoncountable() {
+    // return !isCountable();
+    // }
 
     // /**
     // * Returns the union operation.
@@ -178,26 +151,6 @@ public interface Set {
     // public static <T, S extends Set> UnionSet union(S... sets) {
     // return new GenericUnionSet<T, S>(sets);
     // }
-
-    default public Tree<Object> toTree() {
-        LinkedTree<Object> tree = new LinkedTree<Object>();
-        toTree(tree);
-        return tree;
-    }
-
-    // @SuppressWarnings("unchecked")
-    default public void toTree(MutableTree<Object> tree) {
-        tree.addAndGoTo(this);
-        for (Object object : excerpt()) {
-            Object element = (Object) object;
-            if (element instanceof Set) {
-                ((Set) element).toTree(tree);
-            } else {
-                tree.add(element);
-            }
-        }
-        tree.goBack();
-    }
 
     default public List<?> excerpt() {
         throw new UnsupportedOperationException("Set excerpt undefined");

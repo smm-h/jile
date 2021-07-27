@@ -26,9 +26,4 @@ public interface FiniteSequence extends Sequence {
         return Random.singleton().nextInt(getCardinality());
     }
 
-    @Override
-    default boolean containsNull() {
-        return containsUnchecked(null);
-    }
-
 }

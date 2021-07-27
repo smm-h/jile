@@ -11,21 +11,16 @@ import jile.common.Random;
 public class StoredSet<T> implements FiniteSpecificSet<T> {
 
     private final java.util.Set<T> storage;
-    private final boolean containsNull;
 
     public StoredSet(Iterable<T> elements) {
         if (elements != null) {
-            boolean foundNull = false;
             storage = new HashSet<T>();
             for (T element : elements) {
                 if (element == null)
-                    foundNull = true;
-                storage.add(element);
+                    storage.add(element);
             }
-            containsNull = foundNull;
         } else {
             storage = null;
-            containsNull = false;
         }
     }
 
@@ -73,11 +68,6 @@ public class StoredSet<T> implements FiniteSpecificSet<T> {
             }
         }
         return list;
-    }
-
-    @Override
-    public boolean containsNull() {
-        return containsNull;
     }
 
     @Override

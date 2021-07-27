@@ -8,12 +8,12 @@ import jile.math.operations.Addition;
 import jile.math.operations.AdditiveInversion;
 import jile.math.operations.Multiplication;
 import jile.math.operations.MultiplicativeInversion;
-import jile.math.settheory.NonNullibleInfiniteUniversalSet;
+import jile.math.settheory.InfiniteUniversalSet;
 import jile.common.Convertor;
 import jile.common.Random;
 import jile.common.Singleton;
 
-public class ComplexField extends BaseField<Complex> implements NonNullibleInfiniteUniversalSet<Complex>, Singleton {
+public class ComplexField extends BaseField<Complex> implements InfiniteUniversalSet<Complex>, Singleton {
 
     private static ComplexField singleton;
 

@@ -7,12 +7,12 @@ import jile.math.operations.Addition;
 import jile.math.operations.AdditiveInversion;
 import jile.math.operations.Multiplication;
 import jile.math.operations.MultiplicativeInversion;
-import jile.math.settheory.NonNullibleInfiniteUniversalSet;
+import jile.math.settheory.InfiniteUniversalSet;
 import jile.common.Convertor;
 import jile.common.Random;
 import jile.common.Singleton;
 
-public class RealField extends BaseField<Double> implements NonNullibleInfiniteUniversalSet<Double>, Singleton {
+public class RealField extends BaseField<Double> implements InfiniteUniversalSet<Double>, Singleton {
 
     private static RealField singleton;
 

@@ -2,15 +2,15 @@ package jile.math.string;
 
 import java.util.Iterator;
 
-import jile.math.settheory.NonNullibleFiniteUniversalSet;
+import jile.math.settheory.FiniteUniversalSet;
 import jile.common.Random;
 import jile.common.Singleton;
 
 /**
  * The {@link CharacterSet} is the non-nullible finite universal set of all
- * characters ({@link NonNullibleFiniteUniversalSet}).
+ * characters ({@link FiniteUniversalSet}).
  */
-public class CharacterSet implements NonNullibleFiniteUniversalSet<Character>, Singleton {
+public class CharacterSet implements FiniteUniversalSet<Character>, Singleton {
 
     private CharacterSet() {
     }

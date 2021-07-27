@@ -10,7 +10,7 @@ import jile.common.Singleton;
  * The {@link BooleanSet} is the non-nullible finite universal set of all
  * Boolean values, i.e. true and false, a.k.a. truth and falsity.
  */
-public class BooleanSet implements NonNullibleFiniteUniversalSet<Boolean>, Singleton {
+public class BooleanSet implements FiniteUniversalSet<Boolean>, Singleton {
 
     private BooleanSet() {
     }

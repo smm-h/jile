@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
+import jile.math.Convert;
 import jile.vis.Viewer;
 
 /**
@@ -33,13 +34,13 @@ public class PureSet extends StoredSet<PureSet> {
         stack.push(new LinkedList<PureSet>());
         for (char c : code.toCharArray()) {
             switch (c) {
-            case '{':
-                stack.push(new LinkedList<PureSet>());
-                break;
-            case '}':
-                PureSet p = new PureSet(stack.pop());
-                stack.peek().add(p);
-                break;
+                case '{':
+                    stack.push(new LinkedList<PureSet>());
+                    break;
+                case '}':
+                    PureSet p = new PureSet(stack.pop());
+                    stack.peek().add(p);
+                    break;
             }
         }
         return new PureSet(stack.pop());
@@ -58,7 +59,7 @@ public class PureSet extends StoredSet<PureSet> {
         // PureSet p = PureSet.fromString("{}{{}{}}");
         PureSet p = PureSet.fromOrdinal(7);
         // System.out.println(p);
-        Viewer.singleton().show(p.toTree().visualize());
+        Viewer.singleton().show(Convert.Set_to_Tree(p).visualize());
     }
 
 }
