@@ -26,6 +26,10 @@ public class Views {
         graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
     }
 
+    public static Stroke makeStroke(float width) {
+        return new BasicStroke(width);
+    }
+
     public static Stroke makeDashedStroke(float width, float length) {
         return new BasicStroke(width, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND, 0, new float[] { length }, 0);
     }

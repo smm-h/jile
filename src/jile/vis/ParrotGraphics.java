@@ -32,10 +32,10 @@ public class ParrotGraphics implements Decodeable, Encodeable, Visualizable, Sce
 
     private final Code sourceCode;
 
-    private double minX = Double.MAX_VALUE;
-    private double minY = Double.MAX_VALUE;
-    private double maxX = Double.MIN_VALUE;
-    private double maxY = Double.MIN_VALUE;
+    private double minX;
+    private double minY;
+    private double maxX;
+    private double maxY;
 
     public ParrotGraphics() {
         this((Code) null);
@@ -43,6 +43,15 @@ public class ParrotGraphics implements Decodeable, Encodeable, Visualizable, Sce
 
     public ParrotGraphics(Code sourceCode) {
         this.sourceCode = sourceCode;
+        clear();
+    }
+
+    public void clear() {
+        commands.clear();
+        minX = Double.MAX_VALUE;
+        minY = Double.MAX_VALUE;
+        maxX = Double.MIN_VALUE;
+        maxY = Double.MIN_VALUE;
     }
 
     public int getSize() {
@@ -72,10 +81,19 @@ public class ParrotGraphics implements Decodeable, Encodeable, Visualizable, Sce
     }
 
     private void updateBounds(Rectangle2D bounds) {
-        minX = Math.min(minX, bounds.getMinX());
-        minY = Math.min(minY, bounds.getMinY());
-        maxX = Math.max(maxX, bounds.getMaxX());
-        maxY = Math.max(maxY, bounds.getMaxY());
+        // System.out.println("Before: [" + bounds.getMinX() + ", " + bounds.getMinY() +
+        // ", " + bounds.getMaxX() + ", "
+        // + bounds.getMaxY() + "]");
+        if (Double.compare(bounds.getMinX(), Double.NaN) != 0)
+            minX = Math.min(minX, bounds.getMinX());
+        if (Double.compare(bounds.getMinY(), Double.NaN) != 0)
+            minY = Math.min(minY, bounds.getMinY());
+        if (Double.compare(bounds.getMaxX(), Double.NaN) != 0)
+            maxX = Math.max(maxX, bounds.getMaxX());
+        if (Double.compare(bounds.getMaxY(), Double.NaN) != 0)
+            maxY = Math.max(maxY, bounds.getMaxY());
+        // System.out.println("After: [" + minX + ", " + minY + ", " + maxX + ", " +
+        // maxY + "]");
     }
 
     abstract public class Command {
