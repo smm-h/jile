@@ -16,7 +16,7 @@ public class StoredSet<T> implements FiniteSpecificSet<T> {
         if (elements != null) {
             storage = new HashSet<T>();
             for (T element : elements) {
-                if (element == null)
+                if (element != null)
                     storage.add(element);
             }
         } else {

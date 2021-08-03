@@ -1,4 +1,4 @@
-package jile.math.straightedgeandcompassconstruction;
+package jile.math.geometry;
 
 import java.awt.Graphics;
 

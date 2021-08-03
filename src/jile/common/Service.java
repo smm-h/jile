@@ -31,6 +31,8 @@ abstract public class Service extends Thread {
         }
     }
 
-    /** return true to stop the service loop, and false to continue */
+    /**
+     * return true to stop the service loop, and false to continue
+     */
     abstract public boolean serve();
 }

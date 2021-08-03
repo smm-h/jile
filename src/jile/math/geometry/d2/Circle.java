@@ -1,7 +1,7 @@
 package jile.math.geometry.d2;
 
+import jile.math.geometry.Drawing;
 import jile.math.numbers.Real;
-import jile.math.straightedgeandcompassconstruction.Drawing;
 
 public class TwoDimensionalCircle extends Drawing {
 

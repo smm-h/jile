@@ -1,4 +1,4 @@
-package jile.math.straightedgeandcompassconstruction;
+package jile.math.geometry;
 
 import java.awt.Canvas;
 import java.awt.Color;
@@ -12,8 +12,6 @@ import java.awt.event.WindowEvent;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-
-import jile.math.numbers.Real;
 
 abstract public class StraightedgeAndCompassConstruction implements Iterable<Drawing> {
 

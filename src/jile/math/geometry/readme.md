@@ -2,15 +2,38 @@
 
 [:back:](../readme.md)
 
-There are three fundemental concepts in geometry:
+## Synthetic geometry
 
-- $n$-dimensional **point** (an $n$-tuple, which itself is defined as an ordered set, of real numbers where $n>0$)
+### Synthetic vs. Analytic
+
+Except spaces and points which can only be studied analytically, all geometrical objects can be studied using both synthetic and analytical means. Under synthetic geometry, points and spaces simply do not and cannot exist.
+
+### Geometrical objects
+
+- $n$-dimensional **geometrical object** (two sets of $n$-dimensional points, one called the interior and the other called the exterior)
+  - The object itself, which includes **both** its interior and exterior
+  - Points that form the "inside" of an object ("**interior**" or "volume space")
+  - Points that form the "outside" of an object ("**exterior**" or "external boundary" or "shape")
+    - 2-d shape, or "plane figure"
+    - 3-d shape, or "solid figure"
+
+## Analytic geometry
+
+### Points
+
+- $n$-dimensional **point** (a positive-ary tuple)
+
+### Euclidean spaces
+
 - $n$-dimensional **space** (a set of $n$-dimensional points)
   - Universal set of points (Euclidean space)
     - 1-d space
-    - 2-d space (Plane)
+    - 2-d space (Euclidean Plane)
     - 3-d space
     - 4-d space
+
+### Geometrical objects
+
 - $n$-dimensional **geometrical object** (two sets of $n$-dimensional points, one called the interior and the other called the exterior)
   - The object itself, which includes **both** its interior and exterior
   - Points that form the "inside" of an object ("**interior**" or "volume space")

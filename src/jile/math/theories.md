@@ -1,0 +1,104 @@
+# Theories
+
+- Mathematical theories
+  - Foundational
+    - Proof theory :book:
+    - Model theory :book:
+    - Order theory :book:
+    - Set theory :book:
+      - Measure theory :book:
+  - Pure
+    - Arithmetic
+      - Number theory :book:
+        - Transcendental number theory :book:
+        - Algebraic number theory
+          - Class field theory :book:
+            - Local class field theory :book:
+    - Algebra
+      - Commutative algebra
+        - Elimination theory :book:
+      - Abstract algebra
+        - Category theory :book:
+          - Topos theory :book:
+        - Invariant theory :book:
+        - Representation theory :book:
+        - Scheme theory :book:
+        - Module theory :book:
+        - Ring theory :book:
+        - Semigroup theory :book:
+        - Group theory :book:
+          - Braid theory :book:
+          - Character theory :book:
+        - Field theory :book:
+        - K-theory :book:
+          - Algebraic K-theory :book:
+          - L-theory :book:
+        - Theory of equations :book:
+          - Galois theory :book:
+            - Grothendieck's Galois theory :book:
+      - Universal algebra
+        - Universal theory :book:
+    - Analysis/Calculus
+      - Differential calculus
+        - Deformation theory :book:
+      - Functional analysis
+        - Choquet theory :book:
+        - Operator theory :book:
+      - Complex analysis
+        - Nevanlinna theory :book:
+      - Approximation theory :book:
+      - Asymptotic theory :book:
+      - Distribution theory :book:
+      - Spectral theory :book:
+      - Sturm-Liouville theory :book:
+    - Geometry
+      - Dimension theory :book:
+      - Algebraic geometry
+        - Bifurcation theory :book:
+          - Catastrophe theory :book:
+        - Brill–Noether theory :book:
+        - Dynamical systems
+          - Chaos theory :book:
+          - Control theory :book:
+      - Trignometry
+    - Topology
+      - Algebraic topology
+        - Homotopy theory :book:
+        - Homology theory :book:
+          - Cohomology theory :book:
+            - Hodge theory :book:
+        - Obstruction theory :book:
+        - Surgery theory :book:
+      - Differential topology
+        - Morse theory :book:
+          - Almgren–Pitts min-max theory :book:
+      - Knot theory :book:
+      - Sheaf theory :book:
+      - Singularity theory :book:
+  - Overlapping with **computer science** and **statistics**
+    - Probability theory :book:
+    - Combinatorics
+      - Big numbers
+    - Automata theory :book:
+    - Type theory :book:
+    - Complexity theory :book:
+    - Computation theory :book:
+      - Recursion theory :book:
+    - Matrix theory :book:
+    - Graph theory :book:
+      - Extremal graph theory :book:
+      - Network theory :book:
+    - Game theory :book:
+    - Information theory :book:
+      - Coding theory :book:
+    - Queue theory :book:
+    - Relational theory :book:
+  - Overlapping with **physics** and **engineering**
+    - Quantum theory :book:
+      - Twistor theory :book:
+    - String theory :book:
+      - M-theory :book:
+    - Percolation theory :book:
+    - Seiberg–Witten theory :book:
+    - Optimization theory :book:
+    - Perturbation theory :book:
