@@ -22,14 +22,13 @@ public class Code implements Identifiable, Visualizable {
         this(Resource.of(encoded, ""), language);
     }
 
+    public Code(String encoded, String ext) {
+        this(Resource.of(encoded, ext));
+    }
+
     public Code(Resource resource, Language language) {
-
-        Objects.requireNonNull(resource);
-        Objects.requireNonNull(language);
-
-        this.resource = resource;
-        this.language = language;
-
+        this.resource = Objects.requireNonNull(resource);
+        this.language = language == null ? TextLanguage.singleton() : language;
         beProcessed();
     }
 
