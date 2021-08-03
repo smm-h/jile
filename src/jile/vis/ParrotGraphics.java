@@ -6,7 +6,6 @@ import java.util.*;
 import java.util.List;
 
 import jile.nilex.*;
-import jile.nilex.Languages.NoLanguageAssociatedException;
 import jile.nilex.Setable;
 
 /**
@@ -202,8 +201,8 @@ public class ParrotGraphics implements Decodeable, Encodeable, Visualizable, Sce
     }
 
     @Override
-    public Code encode() throws NoLanguageAssociatedException {
-        // TODO Auto-generated method stub
+    public Code encode() {
+        // TODO encode
         return null;
     }
 

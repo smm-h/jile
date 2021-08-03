@@ -256,17 +256,19 @@ public class Codestack implements Singleton {
                             break;
                         case "load-as":
                             willPush = true;
-                            try {
-                                toPush = new Code(Resource.of(input("Enter contents:"), input("Enter extension:")));
-                            } catch (Languages.NoLanguageAssociatedException e) {
+                            Resource r = Resource.of(input("Enter contents:"), input("Enter extension:"));
+                            if (Languages.singleton().getLanguageByExt(r.getExt()) != null) {
+                                toPush = new Code(r);
+                            } else {
                                 print("???\tNo language is associated with that extension.\n");
                             }
                             break;
                         case "lang":
                             willPush = true;
-                            try {
-                                toPush = Languages.singleton().getLanguageByExt(input("Enter extension:"));
-                            } catch (Languages.NoLanguageAssociatedException e) {
+                            Language L = Languages.singleton().getLanguageByExt(input("Enter extension:"));
+                            if (L != null) {
+                                toPush = L;
+                            } else {
                                 print("???\tNo language is associated with that extension.\n");
                             }
                             break;

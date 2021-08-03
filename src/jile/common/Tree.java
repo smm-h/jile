@@ -5,14 +5,13 @@ import java.util.List;
 import jile.nilex.Code;
 import jile.nilex.Decodeable;
 import jile.nilex.Encodeable;
-import jile.nilex.Languages.NoLanguageAssociatedException;
 import jile.vis.TreeView;
 import jile.vis.Visualizable;
 
 public interface Tree<T> extends Encodeable, Visualizable, Decodeable {
 
     @Override
-    default public Code encode() throws NoLanguageAssociatedException {
+    default public Code encode() {
         return new Code(Resource.of(getRepresenation(), "tlg"));
     }
 

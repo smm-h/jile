@@ -29,7 +29,7 @@ public class Languages implements Singleton {
         // System.out.println("*." + ext + " <- " + language.name);
     }
 
-    public Language getLanguageByExt(String ext) throws NoLanguageAssociatedException {
+    public Language getLanguageByExt(String ext) {
         Language language = null;
         if (extToLanguage != null) {
             ext = ext.toLowerCase();
@@ -37,14 +37,6 @@ public class Languages implements Singleton {
                 language = extToLanguage.get(ext);
             }
         }
-        if (language == null) {
-            throw new NoLanguageAssociatedException();
-        } else {
-            return language;
-        }
-    }
-
-    // @SuppressWarnings("serial")
-    public class NoLanguageAssociatedException extends Exception {
+        return language;
     }
 }

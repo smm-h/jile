@@ -5,7 +5,7 @@ import java.util.*;
 import jile.nilex.Code;
 import jile.nilex.Mishap;
 import jile.nilex.IndividualTokenType;
-import jile.nilex.Languages.NoLanguageAssociatedException;
+import jile.nilex.Languages;
 import jile.nilex.IndividualTokenType.IndividualToken;
 import jile.nilex.Codestack;
 import jile.nilex.TextLanguage;
@@ -181,9 +181,9 @@ public class CodeView extends View {
                 if (!fulfilled) {
                     for (TokenView tokenView : linkies) {
                         if (tokenView.shape.contains(mouse.getPoint())) {
-                            try {
+                            if (Languages.singleton().getLanguageByExt(tokenView.resource.getExt()) != null) {
                                 v.show(new Code(tokenView.resource).visualize());
-                            } catch (NoLanguageAssociatedException e) {
+                            } else {
                                 v.show(new Code(tokenView.resource, TextLanguage.singleton()).visualize());
                             }
                             fulfilled = true;

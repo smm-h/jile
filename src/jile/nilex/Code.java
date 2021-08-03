@@ -14,7 +14,7 @@ public class Code implements Identifiable, Visualizable {
     public final Language language;
     private Resource resource;
 
-    public Code(Resource resource) throws Languages.NoLanguageAssociatedException {
+    public Code(Resource resource) {
         this(resource, Languages.singleton().getLanguageByExt(resource.getExt()));
     }
 
