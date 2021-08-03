@@ -3,12 +3,20 @@ package jile.nilex.json;
 import java.util.HashMap;
 import java.util.LinkedList;
 
+import jile.nilex.Code;
+import jile.nilex.Encodeable;
+
 public class JSON {
     private JSON() {
     }
 
-    public static interface Element {
+    public static interface Element extends Encodeable {
         public java.lang.String serialize();
+
+        @Override
+        default public Code encode() {
+            return new Code(serialize(), "json");
+        }
     }
 
     public static class Map extends HashMap<String, Element> implements Element {
