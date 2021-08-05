@@ -1,6 +1,6 @@
 # Jilic Intensions
 
-[:scroll:](Intension.java)
+[`Intension.java`](Intension.java)
 
 Much like an adjective that modifies a noun, an intension modifies a Java type and its subtypes.
 

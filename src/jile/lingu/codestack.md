@@ -4,7 +4,7 @@
 
 ## `Codestack`
 
-[:scroll:](Codestack.java) :arrow_forward:
+[`Codestack.java`](Codestack.java) :arrow_forward:
 
 Codestack is the CLI of the lingu project. As its name suggests, it lets the user interact with a stack on which [codes](codes.md#code) and other related objects can be pushed. If the object on top of the stack is a [view](../vis/viewing.md#view), a minimalistic GUI called the [viewer](../vis/viewing.md#viewer) can be invoked to view it.
 

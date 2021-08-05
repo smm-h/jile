@@ -10,24 +10,24 @@
 
 ## `Token`
 
-[:scroll:](../lang/Token.java)
+[`Token.java`](../lang/Token.java)
 
 ## `IndividualToken`
 
-[:scroll:](../lang/IndividualTokenType.java)
+[`IndividualTokenType.java`](../lang/IndividualTokenType.java)
 
 ## `CollectiveToken`
 
-[:scroll:](../lang/CollectiveTokenType.java)
+[`CollectiveTokenType.java`](../lang/CollectiveTokenType.java)
 
 ## `TokenType`
 
-[:scroll:](../lang/TokenType.java)
+[`TokenType.java`](../lang/TokenType.java)
 
 ## `IndividualTokenType`
 
-[:scroll:](../lang/IndividualTokenType.java)
+[`IndividualTokenType.java`](../lang/IndividualTokenType.java)
 
 ## `CollectiveTokenType`
 
-[:scroll:](../lang/CollectiveTokenType.java)
+[`CollectiveTokenType.java`](../lang/CollectiveTokenType.java)

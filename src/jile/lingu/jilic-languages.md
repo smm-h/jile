@@ -4,7 +4,7 @@
 
 ## `Language`
 
-[:scroll:](../lang/Language.java)
+[`Language.java`](../lang/Language.java)
 
 A language is the way in which a [code](codes.md) gets "internalized", and then "externalized" into something else.
 

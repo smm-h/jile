@@ -16,19 +16,19 @@ Any object that does a process is known as a [processor](#processor).
 
 ## `Processor`
 
-[:scroll:](../lang/Processor.java)
+[`Processor.java`](../lang/Processor.java)
 
 A processor is meant to take a [code](#code) object, read its associated data from some [port](#port)s, instantly process them somehow, and then write to some other ports. Processor can also be executed in chains using [multi-processor](#multiprocessor)s.
 
 ## `Multiprocessor`
 
-[:scroll:](../lang/Multiprocessor.java)
+[`Multiprocessor.java`](../lang/Multiprocessor.java)
 
 A multi-processor is a [processor](#processor) whose process involves the consecutive processes of multiple other processors. It was created to allow a [language](#language) to be conveniently extended using extra processors.
 
 ## `Port`
 
-[:scroll:](../lang/Port.java)
+[`Port.java`](../lang/Port.java)
 
 A generic port of type $T$ is essentially a mapping from [code](#code) objects to objects of type $T$. It is the duty of [processors](#processor) to read data from and write data to these ports, using the code object they are processing.
 

@@ -4,17 +4,17 @@
 
 ## `Viewer`
 
-[:scroll:](Viewer.java)
+[`Viewer.java`](Viewer.java)
 
 ## `Visualizable`
 
-[:scroll:](Visualizable.java)
+[`Visualizable.java`](Visualizable.java)
 
 Anything that can be visualized to produce a [view](#view) object.
 
 ## `View`
 
-[:scroll:](View.java) :arrow_forward:
+[`View.java`](View.java) :arrow_forward:
 
 Anything that can be viewed by the [viewer](#viewer). A view object is exactly in one mode at a given time:
 
