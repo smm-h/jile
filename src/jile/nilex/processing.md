@@ -34,4 +34,4 @@ A generic port of type $T$ is essentially a mapping from [code](#code) objects t
 
 ## Error handling
 
-Given how `Process` is an inner class of the [code class](codes.md#code), it is safe to say every process has a code owner. Since processes are meant to be happening seamlessly and constantly in the background, they have make as little noise as possible. Therefore unlike other portion of Java code, anything that happens as part of a "process" must not throw any exceptions, but silence them and instead "[issue mishaps](mishaps.md)".
+Given how `Process` is an inner class of the [code class](codes.md#code), it is safe to say every process has a code owner. Since processes are meant to be happening seamlessly and constantly in the background, they have to make as little noise as possible. Therefore unlike other portion of Java code, anything that happens as part of a "process" must not throw any exceptions, but silence them and instead "[issue mishaps](mishaps.md)".

@@ -6,7 +6,9 @@
 
 [:scroll:](../lang/Code.java)
 
-A code is essentially a file written in a certain [language](#language). A code object internally uses the [resource](#resource) class instead of directly working with files.
+A code is essentially any plan text file written in a certain [language](languages.md).
+
+Instead of directly working with files, a code object internally uses the [resource](#resource) class
 
 ## `Encodeable`
 

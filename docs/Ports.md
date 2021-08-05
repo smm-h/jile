@@ -66,26 +66,25 @@ Then when an instance of it is returned to the wild, it can only be used to obta
 ## Examples
 
 - `Tokenizer`
-  - Writes `Tokenizer.Syntax`
-  - Writes `Tokenizer.Semantics`
+  - Writes `Code.syntax`
+  - Writes `Tokenizer.tokenized`
 - `Organizer`
-  - Reads `Tokenizer.Semantics`
-  - Writes `Organizer.Semantics`
+  - Reads `Tokenizer.tokenized`
+  - Writes `Grouper.grouped`
 - `TokenizerMaker`
-  - Reads `Tokenizer.Semantics`
+  - Reads `Tokenizer.tokenized`
   - Writes `Tokenizer`
 - `OrganizerMaker`
-  - Reads `Tokenizer.Semantics`
+  - Reads `Tokenizer.tokenized`
   - Writes `Organizer`
 - `TreeLanguage`
-  - Reads `Tokenizer.Semantics`
+  - Reads `Tokenizer.tokenized`
   - Writes `LinkedTree<String>`
 - `TurtleGraphicsLanguage`
-  - Reads `Organizer.Semantics`
+  - Reads `Grouper.grouped`
   - Writes `TurtleGraphics`
 - `PercentDecoder`
   - Writes `String`
 - `Highlighter`
   - Reads `Tokenizer.Syntax`
   - Writes `CodeView`
-
