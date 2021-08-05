@@ -4,28 +4,30 @@
 
 ## Background
 
-I used to be estranged with Java until a freelancing project forced me to learn it in-depth and except a few minor quarrels, love its object-oriented specification and conventions. From then on, Jile has been the rock on which I have build everything else. The word "Jile" is a portmanteau of the words Java and Nile.
+I used to be estranged with [Java]() until [a freelancing project]() forced me to learn it, and except for [a few minor details](), come to love its [object-oriented specification]() and [various conventions](). From then on, Jile has become the rock on which I have built everything else. The word "Jile" is a portmanteau of the words Java and [Nile]().
 
-The two main projects in Jile are **NiLEX**, which has a long history before my acquaintence with Java, spanning many years and many languages, and **Jilic Mathematics**, with no prior history before Java and Jile. Any other well-defined Java project that I take on will eventually become a part of Jile.
+The project that started Jile was what is known today as the **Jilic Linguistics**. It was initially known as **NiLEX**, and had [a long history]() before Jile, that spanned many years and many languages. The second project was **Jilic Mathematics**, that [also started out as a freelancing project](). Any other well-defined Java project that I take on will eventually become a part of Jile.
 
 ## Goals
 
-- Remaining as pure as possible: relying as little as possible on standard and third-party libraries. Rational: hoping to one day be ported to Android.
-- Interrelation: "playing nice" with each other, especially `common`, across projects. Reducing duplicate semantics.
+- **Purity**: relying as little as possible on the standard and third-party libraries
+  - Rationale: so it can one day be ported to [Android]()
+- **Interrelation**: having packages "play nice" with each other, especially with `common`. Reducing duplicate semantics and keeping the code as [DRY]() as possible
+  - Rationale: maintainibility
 
 ## Packages
 
-- [`common`](common/readme.md) utility methods, static functionality, basic data strucutres, and general interfaces that all other packages must "play nice" with
-- [`lingu`](lingu/readme.md) the study of **Nilic languages**
-- [`vis`](vis/readme.md) **visualization** of data structures and UI elements, and the necessary tools for "theming" them
-- [`math`](math/readme.md) formalizing theories in **theoretical mathematics**
-- [`cs`](cs/readme.md) material from courses taught in academic **computer science**
+- [`lingu`](lingu/readme.md) **Jilic Linguistics**
+- [`math`](math/readme.md) **Jilic Mathematics**
+- [`cs`](cs/readme.md) **Jilic Computer Science**
+- [`vis`](vis/readme.md) Visualizations
+- [`common`](common/readme.md) Common utilities
 
 And coming soon,
 
-- [`gm`](TODO), pygame-like wrapper over SDL, mimicing **GML semantics** to which I was once addicted
-- [`therm`](TODO) deals with energy, mass and discrete time in the context of **thermodynamics**
+- `gm`, [pygame]()-like wrapper over [SDL](), mimicing **[GML]() semantics** to which I was once addicted
+- `therm` deals with energy, mass and discrete time in the context of **Jilic Thermodynamics**; heavily uses Jilic mathematics
 
-## Emojis
+## Appendix
 
-[See what emojis mean](emojis.md)
+[See what emojis might mean](emojis.md)
