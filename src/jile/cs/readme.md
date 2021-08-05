@@ -1,6 +1,6 @@
 # `jile.cs`
 
-[:back:](../readme.md)
+[_Go up one level_](../readme.md)
 
 This package defines stuff taught to computer science students.
 

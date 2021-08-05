@@ -1,5 +1,5 @@
 # Formalized Settings
 
-[:back:](readme.md)
+[_Go up one level_](readme.md)
 
 - [SettingsFormalizer](SettingsFormalizer.java)

@@ -6,7 +6,7 @@
 | :back:                 | `\[:back:\]\((.*)readme\.md\)`                                       | The `readme.md` file one directory higher         |
 | :link:                 | `\[(.*):link:\]\((.*)\.md\)`                                         | A leaf `*.md` file                                |
 | :globe_with_meridians: | `\[:globe_with_meridians:\]\(https://en\.wikipedia\.org/wiki/(.*)\)` | A Wikipedia article representing that type        |
-| :scroll:               | `\[:scroll:\]\((.*\/|)([^/]*\.java)\)`                               | The `*.java` file representing that type          |
+| :scroll:               | `\[:scroll:\]\((.*\/ا)([^/]*\.java)\)`                               | The `*.java` file representing that type          |
 | :arrow_forward:        | `:arrow_forward:`                                                    | A `*.java` file that is executable                |
 
 ## More

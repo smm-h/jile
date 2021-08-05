@@ -1,6 +1,6 @@
 # Processing versus Making
 
-[:back:](readme.md)
+[_Go up one level_](readme.md)
 
 Despite their similarities, [processing](processing.md) and [making](making.md) have a few fundamental differences.
 
