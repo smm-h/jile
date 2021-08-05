@@ -28,8 +28,8 @@ abstract public class Language {
         this(name, primaryExt, primaryExt, processor);
     }
 
-    public static Resource find(Language language, String address) {
-        return Objects.requireNonNull(Resource.of(language.langPath + "/" + address + "." + language.primaryExt));
+    public Resource find(String address) {
+        return Objects.requireNonNull(Resource.of(langPath + "/" + address + "." + primaryExt));
     }
 
     private Maker<?> mainMaker;
@@ -47,7 +47,7 @@ abstract public class Language {
         abstract public T make(Code code);
 
         public T makeFrom(String address) {
-            return make(new Code(find(Language.this, address), Language.this));
+            return make(new Code(find(address), Language.this));
         };
 
     }

@@ -69,7 +69,7 @@ public class TokenizerMaker extends Language implements Singleton {
                     IndividualToken token = iterator.next();
                     if (token.is("verbatim <import>")) {
                         token = iterator.next();
-                        links.put(token, Language.find(TokenizerMaker.singleton, token.data));
+                        links.put(token, TokenizerMaker.singleton.find(token.data));
                     }
                 }
 
