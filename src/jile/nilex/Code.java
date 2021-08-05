@@ -32,23 +32,13 @@ public class Code implements Identifiable, Visualizable {
         beProcessed();
     }
 
-    private boolean canBeProcessed = false;
-
-    public boolean canBeProcessed() {
-        return canBeProcessed;
-    }
-
     private synchronized void beProcessed() {
         // String i = getIdentity();
         // System.out.println("\n" + i + "\n" + "<".repeat(i.length()) + "\n");
 
         mishaps.write(this, new HashMap<IndividualToken, Set<Mishap>>());
 
-        canBeProcessed = true;
-
         language.processor.process(this);
-
-        canBeProcessed = false;
 
         // System.out.println("\n" + i + "\n" + ">".repeat(i.length()) + "\n");
     }

@@ -3,6 +3,7 @@ package jile.nilex;
 import java.util.*;
 
 import jile.common.Resource;
+import jile.nilex.processors.Processor;
 
 abstract public class Language {
 

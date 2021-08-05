@@ -1,6 +1,8 @@
-package jile.nilex;
+package jile.nilex.processors;
 
 import java.util.*;
+
+import jile.nilex.Code;
 
 public class Multiprocessor implements Processor {
 
@@ -14,13 +16,15 @@ public class Multiprocessor implements Processor {
         }
     }
 
-    /** abstract classes must not call this so they can be extended */
+    /**
+     * Abstract classes must not call this so they can be extended.
+     */
     public void seal() {
         sealed = true;
     }
 
     @Override
-    public final void _process(Code code) {
+    public final void process(Code code) {
         for (Processor processor : processors)
             processor.process(code);
     }

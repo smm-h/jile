@@ -4,7 +4,7 @@ import jile.common.Singleton;
 import jile.common.Tree;
 import jile.nilex.Code;
 import jile.nilex.Language;
-import jile.nilex.Multiprocessor;
+import jile.nilex.processors.Multiprocessor;
 
 public class JSONLanguage extends Language implements Singleton {
 

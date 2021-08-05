@@ -6,6 +6,7 @@ import jile.nilex.Code.Process;
 import jile.nilex.IndividualTokenType.IndividualToken;
 import jile.nilex.CollectiveTokenType.CollectiveToken;
 import jile.nilex.TurtleGraphics.Turtle;
+import jile.nilex.processors.Multiprocessor;
 import jile.common.*;
 import jile.vis.*;
 
@@ -77,7 +78,7 @@ public class TurtleGraphicsLanguage extends Language implements Singleton, Linte
         private static final boolean parallel = true;
 
         @Override
-        public void _process(Code code) {
+        public void process(Code code) {
             // reads: Grouper.grouped
             // writes: port
 

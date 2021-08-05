@@ -3,6 +3,7 @@ package jile.nilex;
 import java.util.*;
 
 import jile.nilex.IndividualTokenType.IndividualToken;
+import jile.nilex.processors.Multiprocessor;
 import jile.common.*;
 import jile.vis.Viewer;
 

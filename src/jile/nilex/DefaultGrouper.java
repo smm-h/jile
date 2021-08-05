@@ -7,6 +7,7 @@ import jile.nilex.IndividualTokenType.IndividualToken;
 import jile.nilex.GrouperMaker.Definition;
 import jile.nilex.GrouperMaker.Formalizer.*;
 import jile.nilex.SettingsFormalizer.FormalSettings;
+import jile.nilex.processors.SingleProcessor;
 // import jile.common.Convertor;
 // import jile.common.TraversibleTree;
 import jile.vis.TreeView;
@@ -36,7 +37,7 @@ public class DefaultGrouper extends SingleProcessor implements Grouper {
     }
 
     @Override
-    public void _process(Code code) {
+    public void process(Code code) {
 
         tokenizer.process(code);
 

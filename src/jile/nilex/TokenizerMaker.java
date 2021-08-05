@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Objects;
 
 import jile.nilex.IndividualTokenType.IndividualToken;
+import jile.nilex.processors.Multiprocessor;
+import jile.nilex.processors.SingleProcessor;
 import jile.common.Common;
 import jile.common.Resource;
 import jile.common.Singleton;
@@ -58,7 +60,7 @@ public class TokenizerMaker extends Language implements Singleton {
         processor.extend(new SingleProcessor() {
 
             @Override
-            public void _process(Code code) {
+            public void process(Code code) {
 
                 var links = new HashMap<IndividualToken, Resource>();
                 var iterator = DefaultTokenizer.tokenized.read(code).iterator();

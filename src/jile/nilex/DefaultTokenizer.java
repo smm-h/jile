@@ -7,6 +7,7 @@ import jile.vis.*;
 
 import jile.nilex.IndividualTokenType.IndividualToken;
 import jile.nilex.TokenizerMaker.Definition;
+import jile.nilex.processors.SingleProcessor;
 
 // TODO normalizations e.g. − to - and → to ->
 public class DefaultTokenizer extends SingleProcessor implements Tokenizer {
@@ -30,7 +31,7 @@ public class DefaultTokenizer extends SingleProcessor implements Tokenizer {
         }
     }
 
-    public void _process(Code code) {
+    public void process(Code code) {
 
         List<IndividualToken> stripped = new LinkedList<IndividualToken>();
         List<IndividualToken> drawable = new LinkedList<IndividualToken>();

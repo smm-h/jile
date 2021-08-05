@@ -1,4 +1,4 @@
-package jile.nilex;
+package jile.nilex.processors;
 
 abstract public class SingleProcessor implements Processor {
 

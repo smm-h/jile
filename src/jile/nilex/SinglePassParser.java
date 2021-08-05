@@ -6,12 +6,13 @@ import jile.nilex.Code.Process;
 import jile.nilex.CollectiveTokenType.CollectiveToken;
 import jile.common.Common;
 import jile.nilex.IndividualTokenType.IndividualToken;
+import jile.nilex.processors.SingleProcessor;
 
 /**
  * Limitations:
  * <ul>
  * <li>Only works with {@link DefaultTokenizer.Verbatim} keywords.*</li>
- * <li>Keywords have to be entirely made up of lowercase letters.</li>
+ * <li>Keywords have to be made up entirely of lowercase letters.</li>
  * </ul>
  * <p>
  * Footnote:
