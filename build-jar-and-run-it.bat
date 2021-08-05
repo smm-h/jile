@@ -1,7 +1,7 @@
 @echo off
 cd jarbuilder
 
-set package=jile.nilex
+set package=jile.lingu
 set mainclass=Codestack
 
 python package-to-jar.py %package% %mainclass%

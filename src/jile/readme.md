@@ -16,7 +16,7 @@ The two main projects in Jile are **NiLEX**, which has a long history before my 
 ## Packages
 
 - [`common`](common/readme.md) utility methods, static functionality, basic data strucutres, and general interfaces that all other packages must "play nice" with
-- [`nilex`](nilex/readme.md) the study of **Nilic languages**
+- [`lingu`](lingu/readme.md) the study of **Nilic languages**
 - [`vis`](vis/readme.md) **visualization** of data structures and UI elements, and the necessary tools for "theming" them
 - [`math`](math/readme.md) formalizing theories in **theoretical mathematics**
 - [`cs`](cs/readme.md) material from courses taught in academic **computer science**

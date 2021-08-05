@@ -2,7 +2,7 @@
 
 ## Outline
 
-1. Create a new class in a Java source code file and extend the `jile.nilex.SettingsLanguage` class.
+1. Create a new class in a Java source code file and extend the `jile.lingu.SettingsLanguage` class.
 2. (Optional) Make sure it `implements Singleton` and it is loaded in `Languages.singleton`.
 3. Make a `super` call in its sole constructor and pass its name and installer, which usually is `Tokenizer.singleton()`.
 4. Implement the supertype method `makeBlank`, as such:

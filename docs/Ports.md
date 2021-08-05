@@ -19,7 +19,7 @@ The method `put` overwrites the stored thing, and `take` removes and returns it.
 
 ## Processors
 
-Nilex revolves around multi-processors, previously known as languages.
+Lingu revolves around multi-processors, previously known as languages.
 
 ```java
 class Multiprocessor implements Processor {

@@ -5,8 +5,8 @@ import java.awt.geom.*;
 import java.util.*;
 import java.util.List;
 
-import jile.nilex.*;
-import jile.nilex.Setable;
+import jile.lingu.*;
+import jile.lingu.Setable;
 
 /**
  * An instance of {@code ParrotGraphics}, much like an actual parrot, will learn

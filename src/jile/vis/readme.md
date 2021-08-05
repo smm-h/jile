@@ -20,7 +20,7 @@ See also: [Viewing](viewing.md)
 - [TurtleGraphics](TurtleGraphics.java)
 - [ParrotGraphics](ParrotGraphics.java)
 - [Theatre](Theatre.java) :arrow_forward:
-- [TurtleGraphicsLanguage](../nilex/TurtleGraphicsLanguage.java)
+- [TurtleGraphicsLanguage](../lingu/TurtleGraphicsLanguage.java)
 
 ## Other
 

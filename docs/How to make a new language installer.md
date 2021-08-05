@@ -8,7 +8,7 @@ Choose a name for it, like `MyMetaLanguage`, and create its Java class:
 public class MyMetaLanguage extends MetaLanguage
 ```
 
-Be sure to import `jile.nilex.MetaLanguage`.
+Be sure to import `jile.lingu.MetaLanguage`.
 
 ## 2. Set-up its LANGPATH and test files
 

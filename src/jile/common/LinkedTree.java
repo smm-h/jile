@@ -3,7 +3,7 @@ package jile.common;
 import java.util.*;
 import java.util.function.Predicate;
 
-import jile.nilex.Code;
+import jile.lingu.Code;
 import jile.vis.TreeView;
 import jile.vis.View.Mode;
 

@@ -9,7 +9,7 @@ import java.util.*;
 
 import javax.swing.JPanel;
 
-import jile.nilex.Codestack;
+import jile.lingu.Codestack;
 import jile.common.*;
 
 // @SuppressWarnings("serial")

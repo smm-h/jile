@@ -1,4 +1,4 @@
-# `jile.nilex.Tokenizer.tokenize`
+# `jile.lingu.Tokenizer.tokenize`
 
 - start the process
 - get the contents of the code as a string

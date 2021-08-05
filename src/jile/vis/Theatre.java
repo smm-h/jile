@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.Point;
 import java.awt.image.BufferedImage;
 
-import jile.nilex.Setable;
+import jile.lingu.Setable;
 import jile.common.Service;
 
 public class Theatre extends View {

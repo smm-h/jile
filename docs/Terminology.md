@@ -1,4 +1,4 @@
-# Terminology of Nilex
+# Terminology of Lingu
 
 To get links to work, first replace all `(\W+)~(\W+)` with `[$1](#$2)`, and then replace all `(\W+)~` with `[$1](#$1)`.
 

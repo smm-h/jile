@@ -1,2 +1,2 @@
-java -jar jile.nilex.jar
+java -jar jile.lingu.jar
 pause

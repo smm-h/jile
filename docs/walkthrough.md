@@ -1,11 +1,11 @@
 # What exactly happens?
 
-- `Nilex.languages` is an empty mapping from exts to `Language`s
-- `Nilex.meta` becomes a new `NilexMetaLanguage` with its translator set.
+- `Lingu.languages` is an empty mapping from exts to `Language`s
+- `Lingu.meta` becomes a new `NilexMetaLanguage` with its translator set.
 - `SimpleTreeLanguage` creates a new dynamic instance of itself, which:
-  - calls its `super()` to call `Nilex.addLanguage` on itself.
+  - calls its `super()` to call `Lingu.addLanguage` on itself.
     - creates a `Code` object from `nlx/SimpleTree.nlx`
-    - pushes this language on the stack of `Nilex.meta`
+    - pushes this language on the stack of `Lingu.meta`
     - [x] `Code` is `process`ed to:
       - be tokenized.
       - [x] be translated,

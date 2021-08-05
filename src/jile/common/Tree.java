@@ -2,9 +2,9 @@ package jile.common;
 
 import java.util.List;
 
-import jile.nilex.Code;
-import jile.nilex.Decodeable;
-import jile.nilex.Encodeable;
+import jile.lingu.Code;
+import jile.lingu.Decodeable;
+import jile.lingu.Encodeable;
 import jile.vis.TreeView;
 import jile.vis.Visualizable;
 

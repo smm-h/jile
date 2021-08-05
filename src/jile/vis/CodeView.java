@@ -2,13 +2,13 @@ package jile.vis;
 
 import java.util.*;
 
-import jile.nilex.Code;
-import jile.nilex.Mishap;
-import jile.nilex.IndividualTokenType;
-import jile.nilex.Languages;
-import jile.nilex.IndividualTokenType.IndividualToken;
-import jile.nilex.Codestack;
-import jile.nilex.TextLanguage;
+import jile.lingu.Code;
+import jile.lingu.Mishap;
+import jile.lingu.IndividualTokenType;
+import jile.lingu.Languages;
+import jile.lingu.IndividualTokenType.IndividualToken;
+import jile.lingu.Codestack;
+import jile.lingu.TextLanguage;
 import jile.common.Common;
 import jile.common.Resource;
 import jile.common.Singleton;

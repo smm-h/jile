@@ -8,11 +8,11 @@ import java.awt.Point;
 // import java.awt.Stroke;
 import java.util.ArrayList;
 
-import jile.nilex.Code;
-import jile.nilex.IndividualTokenType.IndividualToken;
-import jile.nilex.Tokenizer;
-import jile.nilex.Setable;
-import jile.nilex.TextLanguage;
+import jile.lingu.Code;
+import jile.lingu.IndividualTokenType.IndividualToken;
+import jile.lingu.Tokenizer;
+import jile.lingu.Setable;
+import jile.lingu.TextLanguage;
 import jile.common.Convert;
 
 public class TextView extends View {

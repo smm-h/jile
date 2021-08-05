@@ -1,6 +1,6 @@
 package jile.common;
 
-import jile.nilex.Setable;
+import jile.lingu.Setable;
 
 abstract public class Service extends Thread {
 

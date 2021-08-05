@@ -1,0 +1,398 @@
+package jile.lingu;
+
+import java.util.*;
+
+
+
+import jile.lingu.CollectiveTokenType.CollectiveToken;
+import jile.lingu.TurtleGraphics.Turtle;
+import jile.common.*;
+import jile.vis.*;
+
+public class TurtleGraphicsLanguage extends Language implements Singleton, Linter {
+
+    private static TurtleGraphicsLanguage singleton;
+
+    public static TurtleGraphicsLanguage singleton() {
+        if (singleton == null) {
+            singleton = new TurtleGraphicsLanguage();
+        }
+        return singleton;
+    }
+
+    public static void main(String[] args) {
+        Viewer.singleton().show(singleton().maker.makeFrom("b"));
+    }
+
+    public TurtleGraphicsLanguage() {
+
+        super("Turtle Graphics Language", "tgx", new Multiprocessor());
+
+        // reads: code
+        // writes: Grouper.grouped
+        processor.extend(GrouperMaker.singleton().maker.makeFrom("turtle-graphics-language"));
+
+        // reads: Grouper.grouped
+        // writes: TurtleGraphicsLanguage:recorded
+        processor.extend(new Parser(Keywords.values()));
+
+        // reads: TurtleGraphicsLanguage:recorded
+        // makes: TurtleGraphics
+        setMainMaker(maker);
+    }
+
+    private static final Port<ParrotGraphics> recorded = new Port<ParrotGraphics>("TurtleGraphicsLanguage:recorded");
+
+    public final Maker<Theatre> maker = new Maker<Theatre>() {
+        @Override
+        public Theatre make(Code code) {
+            Theatre theatre = Objects.requireNonNull(recorded.read(code)).visualize();
+            theatre.keepLooping.set(false);
+            // theatre.pace.set(theatre.pace.get() / 8);
+            theatre.pace.set(1L);
+            return theatre;
+        }
+    };
+
+    private class Parser extends KeywordParser {
+
+        private final Stack<Map<String, Float>> variables = new Stack<Map<String, Float>>();
+
+        private final Stack<Turtle> turtles = new Stack<Turtle>();
+        // private Turtle theOnlyTurtle;
+
+        private Turtle getCurrentTurtle() {
+            // return theOnlyTurtle;
+            return turtles.peek();
+        }
+
+        private final Map<Character, Rule> rules = new HashMap<Character, Rule>();
+
+        private class Rule {
+
+            final char[] pattern;
+            final CollectiveToken group;
+
+            public Rule(char[] pattern, CollectiveToken group) {
+                this.pattern = pattern;
+                this.group = group;
+            }
+        }
+
+        public Parser(ParsibleKeywords[] values) {
+            super(values);
+        }
+
+        @Override
+        public void _process(Code code) {
+            // reads: Grouper.grouped
+            // writes: port
+
+            setProcess(code.new Endeavor("parsing"));
+
+            var tg = new TurtleGraphics();
+
+            nameGroup("root", (CollectiveToken) Grouper.grouped.read(code));
+            pushTurtle(tg);
+            parseDo(tg, "root");
+            popTurtle();
+
+            var parrot = tg.getParrot();
+
+            if (getProcess().finish()) {
+                recorded.write(code, parrot);
+            }
+        }
+
+        @Override
+        public Keywords next() {
+            // String k = getNextKeyword();
+            // switch (k) {
+            // case "=":
+            // return Keywords.SET;
+            // case "++":
+            // return Keywords.INCREMENT;
+            // case "--":
+            // return Keywords.DECREMENT;
+            // default:
+            // return Keywords.valueOf(k);
+            // }
+            return Keywords.valueOf(getNextKeyword());
+        }
+
+        private void pushTurtle(TurtleGraphics tg) {
+            turtles.push(turtles.isEmpty() ? tg.new Turtle() : tg.new Turtle(getCurrentTurtle()));
+            if (variables.isEmpty())
+                variables.push(new HashMap<String, Float>());
+        }
+
+        private void popTurtle() {
+            turtles.pop();
+            // variables.pop();
+        }
+
+        private void parseDo(TurtleGraphics tg, String name) {
+            // if (getCurrentTurtle().getScale() >= 0.1f) {
+            if (getDepth() < 5) {
+                var group = findGroup(name);
+                if (group != null) {
+                    enter(group);
+                    parse(tg);
+                    exit();
+                }
+            }
+        }
+
+        private void go(boolean draw) {
+            Float v = parseValue();
+            if (v != null)
+                getCurrentTurtle().go(v, draw);
+        }
+
+        private void parse(TurtleGraphics tg) {
+
+            loop: while (true) {
+                switch (next()) {
+                case NOT_A_KEYWORD:
+                    break;
+                case NO_MORE_TOKENS:
+                    break loop;
+                case DRAW:
+                    go(true);
+                    break;
+                case MOVE:
+                    go(false);
+                    break;
+                case TURN:
+                    getCurrentTurtle().turn(parseValue());
+                    break;
+                case SCALE:
+                    getCurrentTurtle().setScale(parseValue());
+                    break;
+                case SET:
+                    String identifier = parseIdentifier();
+                    Float value = parseValue();
+                    if (value != null)
+                        set(identifier, value);
+                    break;
+                case INCREMENT:
+                    increment();
+                    break;
+                case DECREMENT:
+                    decrement();
+                    break;
+                case REPEAT:
+                    repeat(tg);
+                    break;
+                case DEFINE:
+                    define(tg);
+                    break;
+                case CALL:
+                    call(tg);
+                    break;
+                case RULE:
+                    defineRule(tg);
+                    break;
+                case EXPAND:
+                    expand(tg);
+                    break;
+                case DETOUR:
+                    detour(tg);
+                    break;
+                }
+            }
+        }
+
+        private void detour(TurtleGraphics tg) {
+            var block = parseGroup("curly_braces");
+            if (block != null) {
+                new Thread() {
+                    @Override
+                    public void run() {
+                    }
+                }.start();
+                pushTurtle(tg);
+                enter(block);
+                parse(tg);
+                exit();
+                popTurtle();
+            }
+        }
+
+        private void define(TurtleGraphics tg) {
+            parseGroup("curly_braces", parseIdentifier());
+        }
+
+        private void call(TurtleGraphics tg) {
+            parseDo(tg, parseGroupIdentifier());
+        }
+
+        private void defineRule(TurtleGraphics tg) {
+            char symbol = parseIdentifier().charAt(0);
+
+            // new Resolver() {
+            // @Override
+            // public boolean canBeResolved(String identifier) {
+            // return rules.containsKey(identifier.charAt(0));
+            // }
+            // }
+
+            if (peekMustBe("pattern", "single_quotes")) {
+                char[] pattern = poll().getData().toCharArray();
+                var block = parseGroup("curly_braces");
+                if (block != null) {
+                    rules.put(symbol, new Rule(pattern, block));
+                }
+            }
+        }
+
+        private void expand(TurtleGraphics tg) {
+            Float n = parseValue();
+            if (n == null)
+                n = 0f;
+            if (peekMustBe("pattern", "single_quotes")) {
+                char[] generation = poll().getData().toCharArray();
+                for (int i = 0; i < n; i++) {
+                    generation = expand(generation);
+                }
+                for (char key : generation) {
+                    if (rules.containsKey(key)) {
+                        var group = rules.get(key).group;
+                        if (group == null) {
+                            // TODO
+                        } else {
+                            enter(group);
+                            parse(tg);
+                            exit();
+                        }
+                    } else {
+                        Turtle turtle = getCurrentTurtle();
+                        switch (key) {
+                        case '+':
+                            turtle.turn(+get("angle"));
+                            break;
+                        case '-':
+                            turtle.turn(-get("angle"));
+                            break;
+                        case '[':
+                            pushTurtle(tg);
+                            break;
+                        case ']':
+                            popTurtle();
+                            break;
+                        default:
+                            System.out.println("Unknown symbol: " + key);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        private char[] expand(char[] input) {
+            int outputLength = 0;
+            for (char key : input) {
+                if (rules.containsKey(key)) {
+                    outputLength += rules.get(key).pattern.length;
+                } else {
+                    outputLength += 1;
+                }
+            }
+            char[] output = new char[outputLength];
+            int pointer = 0;
+            for (char key : input) {
+                if (rules.containsKey(key)) {
+                    var pattern = rules.get(key).pattern;
+                    for (int index = 0; index < pattern.length; index++) {
+                        output[pointer++] = pattern[index];
+                    }
+                } else {
+                    output[pointer++] = key;
+                }
+            }
+            return output;
+        }
+
+        private void repeat(TurtleGraphics tg) {
+            Float n = parseValue();
+            if (n == null)
+                n = 0f;
+            var block = parseGroup("curly_braces");
+            if (block != null) {
+                enter(block);
+                for (int i = 0; i < n; i++) {
+                    parse(tg);
+                    reenter();
+                }
+                exit();
+            }
+        }
+
+        private void increment() {
+            String v = parseIdentifier(variables.peek());
+            if (v != null)
+                set(v, get(v) + 1);
+        }
+
+        private void decrement() {
+            String v = parseIdentifier(variables.peek());
+            if (v != null)
+                set(v, get(v) - 1);
+        }
+
+        private void set(String v, float value) {
+            if (v != null)
+                variables.peek().put(v, value);
+        }
+
+        private Float get(String v) {
+            return variables.peek().get(v);
+        }
+
+        /** if this returns null, a mishap must be issued. */
+        private Float parseValue() {
+            if (peek("operator").is("verbatim <+>", "verbatim <->", "verbatim <*>", "verbatim </>")) {
+                String op = poll().getData();
+                Float lhs = parseValue();
+                Float rhs = parseValue();
+                if (lhs != null && rhs != null) {
+                    switch (op) {
+                    case "+":
+                        return lhs + rhs;
+                    case "-":
+                        return lhs - rhs;
+                    case "*":
+                        return lhs * rhs;
+                    case "/":
+                        return lhs / rhs;
+                    default:
+                        // impossible to happen
+                        return null;
+                    }
+                } else {
+                    // mishap already issued
+                    return null;
+                }
+            } else if (peek("value").is("identifier")) {
+                return get(parseIdentifier(variables.peek()));
+            } else {
+                // signed is impossible because getCurrentTurtle() sign would be interpreted as
+                // an operator
+                return parseUnsignedFloat();
+            }
+        }
+    }
+
+    private enum Keywords implements KeywordParser.ParsibleKeywords {
+
+        NO_MORE_TOKENS, NOT_A_KEYWORD,
+
+        TURN, DRAW, MOVE, SCALE,
+
+        SET, INCREMENT, DECREMENT,
+
+        REPEAT, DEFINE, CALL,
+
+        EXPAND, RULE, DETOUR,
+    }
+}

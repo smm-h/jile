@@ -9,8 +9,8 @@ import java.awt.Point;
 
 import javax.swing.JPanel;
 
-import jile.nilex.Code;
-import jile.nilex.TreeLanguage;
+import jile.lingu.Code;
+import jile.lingu.TreeLanguage;
 import jile.common.Identifiable;
 
 // @SuppressWarnings("serial")

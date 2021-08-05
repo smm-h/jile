@@ -10,8 +10,8 @@ import java.util.Map;
 import java.util.Stack;
 import java.util.function.BiPredicate;
 
-import jile.nilex.Token;
-import jile.nilex.Setable;
+import jile.lingu.Token;
+import jile.lingu.Setable;
 import jile.common.Common;
 import jile.common.Convertor;
 import jile.common.LinkedTree;

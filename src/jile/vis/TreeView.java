@@ -7,10 +7,10 @@ import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.geom.RoundRectangle2D;
 
-import jile.nilex.Code;
-import jile.nilex.Port;
-import jile.nilex.Codestack;
-import jile.nilex.Setable;
+import jile.lingu.Code;
+import jile.lingu.Port;
+import jile.lingu.Codestack;
+import jile.lingu.Setable;
 import jile.common.Convertor;
 import jile.common.LinkedTree;
 import jile.common.Tree;
