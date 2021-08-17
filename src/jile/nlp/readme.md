@@ -4,10 +4,9 @@
 
 ### `Session`
 
-- a session is created, which stores anything "understood"
-- a file is opened, and it is loaded into RAM as a `Resource`
-- many files can be opened inside a single session
-- a session can be stored in a file and later loaded back into RAM to save progress, as it is computationally expensive
+- a `Session` stores anything "understood"
+- a `Session` can open many files and load them into RAM as `Resource`s
+- the state of a `Session` can be stored in a file and later loaded back into RAM to save progress, as it is computationally expensive
 
 ### `Decision`
 
@@ -49,7 +48,13 @@
     - extract and store relations betweens words
     - deduce relations as statements and questions
     - deduce the lemmas of inflected words
-  - stretch/compress, e.g. to "summarize" :robot:
+  - stretch/compress
+    - stretch
+      - reword the same ideas
+    - compress
+      - delete less important ideas
+      - delete repeated or similar ideas
+      - summarize :robot:
 - Synthesis
   - Orthography [[w](https://en.wikipedia.org/wiki/Orthography)]
 
