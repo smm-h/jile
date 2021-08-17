@@ -1,0 +1,75 @@
+# Jilic Natural Language Processing
+
+## Outline
+
+### `Session`
+
+- a session is created, which stores anything "understood"
+- a file is opened, and it is loaded into RAM as a `Resource`
+- many files can be opened inside a single session
+- a session can be stored in a file and later loaded back into RAM to save progress, as it is computationally expensive
+
+### `Decision`
+
+- from its birth, every `Session` makes a great many `Decision`s to forge its "mind" and `Idea`s
+- every `Decision` affects manys things
+- every `Decision` must be reversible, and when reversed, its effects must completely vanish without a trace
+- tough decisions may enter a queue and await user intervention
+- the answer to a decision may be gray, not b/w
+
+### `Document`
+
+- a `Resource` may generate one or more `Documents`
+- a `Document` is a `Tree` of `Idea`
+- a `Document` is an `Idea` itself, so a document may have more documents as children
+
+### `Idea`
+
+## Hierarchical goals
+
+- Guess language :robot:
+- Analysis
+  - normalize :robot:
+  - tokenize :robot:
+  - stopword removal :robot:
+  - split sentences :robot:
+    - informal vs. formal :robot:
+    - spellcheck and correction :robot:
+    - stemming and lemmatization :robot:
+- Process/understanding
+  - Contextual nuances [[w](https://en.wikipedia.org/wiki/Pragmatics)]
+  - Rate words to gain insight
+    - By importance, to find _key_-words :robot:
+    - By sentiment, to accomplish sentiment analysis :robot:
+    - By relavance, to find topics :robot:
+      - Categorize and organize the documents
+      - Generate a word-cloud :robot:
+  - Extract entities :robot:
+  - :ocean:
+    - extract and store relations betweens words
+    - deduce relations as statements and questions
+    - deduce the lemmas of inflected words
+  - stretch/compress, e.g. to "summarize" :robot:
+- Synthesis
+  - Orthography [[w](https://en.wikipedia.org/wiki/Orthography)]
+
+## Document assessment
+
+- human readable (ratio of textual symbols to length)
+- well-broken (ratio of line-breaks to length)
+- patternless (not CSV, TSV, or SSV)
+- [plain](#plain-ness) (not JSON, Markdown, or XML)
+  - XML tags
+    - HTML tags
+  - Markdown tags
+    - Markdown headers
+    - Markdown tables
+    - Markdown emojis
+    - Inline LaTeX
+- well-distributed (unicode clusters)
+- well-spaced (ratio of whitespace to length)
+- well-separated (ratio of single spaces to length)
+- well-structured (ratio of openers to closers)
+- well-punctuated (ratio of punctuation to length)
+- well-normalized (ratio of non-normal characters to length)
+- well-articulated (clusters of repeated non-whitespace characters)
