@@ -9,3 +9,5 @@
 /jar/jile.lingu.jar
 /*.code-workspace
 /*.rar
+/**/*.jar
+/**/*-runner.bat
